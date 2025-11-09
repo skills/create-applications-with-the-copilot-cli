@@ -1,0 +1,17 @@
+{
+  "name": "copilot-cli-calculator",
+  "version": "1.0.0",
+  "description": "A simple Node.js calculator app built with GitHub Copilot CLI",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "node calculator.js"
+  },
+  "keywords": [
+    "calculator",
+    "copilot",
+    "cli",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "MIT"
+}

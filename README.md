@@ -1,31 +1,31 @@
-# (replace-me: Exercise title)
+# Copilot CLI: Create applications with the Copilot CLI
 
-_(replace-me: One-line description of the exercise)_
+_Learn to use GitHub Copilot CLI for issue management and building a Node.js calculator application._
 
 ## Welcome
 
-- **Who is this for**: (replace-me: Target audience description)
-- **What you'll learn**: (replace-me: Learning objectives)
-- **What you'll build**: (replace-me: Description of what the learner will create)
+- **Who is this for**: Developers who want to learn how to use GitHub Copilot CLI to streamline their development workflow
+- **What you'll learn**: How to install and use GitHub Copilot CLI for creating issues, generating code, and collaborating interactively on the command line
+- **What you'll build**: A Node.js calculator app using Copilot CLI for project setup, issue management, and collaborative development
 - **Prerequisites**:
-  - (replace-me: Prerequisite skill/exercise)
-  - (replace-me: Other prerequisites)
+  - Familiarity with basic command line (CLI) operations
+  - Basic knowledge of GitHub repositories
+  - Prior exposure to Node.js projects is helpful but not required
 
-- **How long**: This exercise takes less than (replace-me: estimated time) to complete.
+- **How long**: This exercise takes less than 60 minutes to complete.
 
 In this exercise, you will:
 
-1. (replace-me: Learning objective step #1)
-1. (replace-me: Learning objective step #2)
-1. (replace-me: Learning objective step #N)
+1. Learn to install Copilot CLI and create an issue template
+1. Use Copilot CLI to create issues for a Node.js calculator app, collaborating interactively with Copilot
+1. Practice iterative development by working together with Copilot on the command line
 
 
 ### How to start this exercise
 
 Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
 
-<!--  (replace-me: Make sure to edit the URL with proper template_owner, template_name, repo name and description)  -->
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=exercise-template&owner=%40me&name=skills-<replace-me>&description=Exercise:+Replace+me&visibility=public)
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=create-applications-with-the-copilot-CLI&owner=%40me&name=skills-copilot-cli-calculator&description=Exercise:+Copilot+CLI+Create+applications&visibility=public)
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

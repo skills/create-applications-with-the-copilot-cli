@@ -2,15 +2,12 @@ name: Step 1
 
 on:
   workflow_dispatch:
-  # Common event triggers: pull_request, push, issues, issue_comment (feel free to experiment)
-  # Docs: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
-  # Example:
-  # pull_request:
-  #   branches:
-  #     - main
+  push:
+    paths:
+      - '.github/ISSUE_TEMPLATE/bug_report.md'
 
 permissions:
-  contents: read
+  contents: write
   actions: write
   issues: write
 
@@ -22,9 +19,90 @@ jobs:
     name: Find Exercise Issue
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
 
+  check_step_work:
+    name: Check step work
+    runs-on: ubuntu-latest
+    needs: [find_exercise]
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Get response templates
+        uses: actions/checkout@v5
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.7.0
+
+      - name: Find last comment
+        id: find-last-comment
+        uses: peter-evans/find-comment@v3
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          direction: last
+
+      - name: Update comment - checking work
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
+          file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
+          edit-mode: replace
+
+      - name: Check if bug_report.md file exists
+        id: check-file-exists
+        continue-on-error: true
+        uses: skills/exercise-toolkit/actions/file-exists@v0.7.0
+        with:
+          file: .github/ISSUE_TEMPLATE/bug_report.md
+
+      - name: Check for key sections in bug_report.md
+        id: check-for-sections
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: .github/ISSUE_TEMPLATE/bug_report.md
+          keyphrase: steps to reproduce
+
+      - name: Check for expected behavior section
+        id: check-expected-behavior
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: .github/ISSUE_TEMPLATE/bug_report.md
+          keyphrase: expected behavior
+
+      - name: Update comment - step results
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
+          edit-mode: replace
+          file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
+          vars: |
+            step_number: 1
+            results_table:
+              - description: "Bug report template file exists"
+                passed: ${{ steps.check-file-exists.outcome == 'success' }}
+              - description: "Template includes 'steps to reproduce' section"
+                passed: ${{ steps.check-for-sections.outcome == 'success' }}
+              - description: "Template includes 'expected behavior' section"
+                passed: ${{ steps.check-expected-behavior.outcome == 'success' }}
+
+      - name: Fail job if not all checks passed
+        if: contains(steps.*.outcome, 'failure')
+        run: exit 1
+
   post_next_step_content:
     name: Post next step content
-    needs: [find_exercise]
+    needs: [find_exercise, check_step_work]
     runs-on: ubuntu-latest
     env:
       ISSUE_REPOSITORY: ${{ github.repository }}

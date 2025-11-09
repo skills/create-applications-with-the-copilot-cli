@@ -1,27 +1,77 @@
-## Step 3: (replace-me: STEP-NAME)
+## Step 3: Expand Calculator Functionality
 
-(replace-me: OPTIONAL Brief story or scenario to introduce the step)
+Duck wants to expand the calculator with additional operations by creating a new issue and working with Copilot CLI to implement the enhancements.
 
-### 📖 Theory: (replace-me: Theory title)
+### 📖 Theory: Iterative Development with Copilot CLI
 
-<!-- GitHub-styled notifications can be used outside of ordered lists. Available options are: NOTE, IMPORTANT, WARNING, TIP, CAUTION -->
-<!--
+**Iterative Development and Agile Practices**
+
+Modern software development follows iterative approaches where features are built incrementally:
+- Start with a minimal viable product (MVP)
+- Add features in small, manageable chunks
+- Test and validate each addition
+- Continuously improve based on feedback
+
+**Maintaining Momentum with Copilot CLI**
+
+GitHub Copilot CLI helps maintain development momentum by:
+- Quickly generating code for new features
+- Suggesting best practices and patterns
+- Helping debug and test new functionality
+- Reducing context switching by keeping you in the terminal
+
+**Testing and Improvement Workflows**
+
+As you add features, Copilot CLI can help you:
+- Generate test cases for new operations
+- Suggest edge cases to consider
+- Create documentation
+- Refactor code for better maintainability
+
+### ⌨️ Activity: Add More Operations to the Calculator
+
+1. Create a new issue for additional calculator operations:
+   ```bash
+   gh issue create --title "Add More Operations to Calculator" --body "Expand the calculator with additional operations:
+   - Modulo (remainder)
+   - Exponentiation (power)
+   - Square root
+   
+   Each operation should be thoroughly tested and documented."
+   ```
+
+1. Work with Copilot CLI to implement the new operations. You can ask for help:
+   ```bash
+   gh copilot suggest "add modulo, exponentiation, and square root functions to calculator.js"
+   ```
+
+1. Implement the suggested functions in your `calculator.js` file
+
+1. (Optional) Test your new functions:
+   ```bash
+   node -e "const calc = require('./calculator'); console.log('5 % 2 =', calc.modulo(5, 2)); console.log('2 ^ 3 =', calc.power(2, 3));"
+   ```
+
+1. Commit your changes:
+   ```bash
+   git add calculator.js
+   git commit -m "Add modulo, power, and square root operations"
+   git push
+   ```
+
+> [!TIP]
+> Use `gh copilot explain` to understand complex mathematical operations or JavaScript patterns!
+
 > [!NOTE]
-> (Important note or additional information relevant to this section)
- -->
-
-(replace-me: Optional theory or background information relevant to this step)
-
-### ⌨️ Activity: (replace-me: Activity title)
-
-1. (replace-me: First instruction)
-1. (replace-me: Second instruction)
-1. (replace-me: Additional instructions as needed)
+> Creating this second issue will complete the exercise and trigger the review workflow!
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
-- (replace-me: Troubleshooting tip or hint)
-- (replace-me: Additional troubleshooting tips as needed)
+- Make sure your issue title includes "Calculator" or "Operations"
+- The calculator.js file should export functions that can be required/imported
+- You can test operations manually using Node.js REPL: `node` then type your code
+- Don't worry if some functions already exist - focus on adding new ones
+- Remember to commit and push any code changes you make
 
 </details>

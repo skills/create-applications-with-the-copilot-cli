@@ -1,0 +1,30 @@
+{
+  "name": "Copilot CLI Calculator Exercise",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "installDirectlyFromGitHubRelease": true,
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "files.autoSave": "afterDelay"
+      }
+    }
+  },
+  "postCreateCommand": "echo '🚀 Welcome to the Copilot CLI Exercise!' && echo '' && echo '📝 To install GitHub Copilot CLI extension:' && echo '   1. Run: gh extension install github/gh-copilot' && echo '   2. Authenticate with: gh auth login' && echo '' && echo '📖 Open README.md to get started with the exercise!' && echo '' && npm install",
+  "onCreateCommand": "chmod +x .devcontainer/setup.sh 2>/dev/null || true",
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "notify"
+    }
+  },
+  "remoteUser": "node"
+}
