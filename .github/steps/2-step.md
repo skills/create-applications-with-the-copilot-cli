@@ -12,11 +12,15 @@ The GitHub CLI (`gh`) allows you to create issues directly from the command line
 
 Once you have an issue created, GitHub Copilot CLI can help you:
 - Generate boilerplate code based on your requirements
-- Suggest implementation approaches
+- Suggest implementation approaches using the latest AI models
 - Create test cases
 - Debug and fix issues interactively
+- Share your session using the `/share` command to save as Markdown or a gist
 
-The interactive nature of Copilot CLI means you can have a conversation with it, refining suggestions until you get exactly what you need.
+The interactive nature of Copilot CLI means you can have a conversation with it, refining suggestions until you get exactly what you need. You can even paste or drag-and-drop images to provide visual context for your questions.
+
+> [!TIP]
+> Use the `/share` command to save your Copilot CLI chat sessions as Markdown files or GitHub gists for future reference!
 
 **References:**
 - [About Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)

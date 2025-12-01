@@ -7,10 +7,21 @@ Duck is getting ready to manage development for the Node.js calculator app and w
 **What is GitHub Copilot CLI?**
 
 GitHub Copilot CLI is a command-line interface that brings the power of GitHub Copilot to your terminal. It helps developers by:
-- Providing intelligent command suggestions
+- Providing intelligent command suggestions powered by the latest AI models from OpenAI and Google
 - Generating code snippets and scripts
 - Assisting with Git operations and GitHub interactions
 - Offering contextual help and documentation
+- Supporting image inputs via paste and drag-and-drop for visual context
+- Providing the `/share` command to save chat sessions as Markdown files or GitHub gists
+
+**Recent Enhancements**
+
+GitHub Copilot CLI continues to evolve with significant improvements including:
+- Access to the newest AI models for cutting-edge responses
+- Enhanced image support for adding visual context to your queries
+- Improved handling of long-running shell commands
+- Better support for MCP (Model Context Protocol) server tool notifications
+- Improved whitespace, formatting, and UI interactions
 
 **Issue Templates**
 

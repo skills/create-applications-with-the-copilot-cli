@@ -15,10 +15,12 @@ Modern software development follows iterative approaches where features are buil
 **Maintaining Momentum with Copilot CLI**
 
 GitHub Copilot CLI helps maintain development momentum by:
-- Quickly generating code for new features
+- Quickly generating code for new features using the latest AI models
 - Suggesting best practices and patterns
 - Helping debug and test new functionality
 - Reducing context switching by keeping you in the terminal
+- Handling long-running shell commands more efficiently
+- Supporting improved automation with the headless `-p` mode
 
 **Testing and Improvement Workflows**
 
@@ -27,6 +29,7 @@ As you add features, Copilot CLI can help you:
 - Suggest edge cases to consider
 - Create documentation
 - Refactor code for better maintainability
+- Save and share your development sessions using `/share`
 
 ### ⌨️ Activity: Add More Operations to the Calculator
 

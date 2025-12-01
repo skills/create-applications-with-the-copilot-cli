@@ -20,6 +20,14 @@ In this exercise, you will:
 1. Use Copilot CLI to create issues for a Node.js calculator app, collaborating interactively with Copilot
 1. Practice iterative development by working together with Copilot on the command line
 
+### What's New in Copilot CLI
+
+GitHub Copilot CLI now includes exciting enhancements:
+- **Latest AI models**: Access the newest models from OpenAI and Google
+- **Better image support**: Add images via paste and drag-and-drop
+- **`/share` command**: Save chat sessions as Markdown files or GitHub gists
+- **Improved reliability**: Better handling of long-running commands and enhanced automation support
+
 
 ### How to start this exercise
 
