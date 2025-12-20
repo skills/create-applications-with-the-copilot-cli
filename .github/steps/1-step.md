@@ -36,7 +36,36 @@ Issue templates help maintain consistency when team members create issues. This 
 - [Using GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli)
 - [GitHub Copilot CLI 101](https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/)
 
-### ⌨️ Activity 1: Install the Standalone Copilot CLI
+### :keyboard: Activity 1: Getting to know your development environment
+
+1. Right-click the below button to open the **Create Codespace** page in a new tab.
+
+   [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/{{full_repo_name}}?quickstart=1)
+
+   - The free tier of Codespaces that comes with all GitHub accounts is fine, assuming you still have minutes available.
+   - The default Codespace settings are fine.
+
+1. Confirm the **Repository** field is your copy of the exercise, not the original, then click the green **Create Codespace** button.
+
+   - ✅ Your copy: `/{{full_repo_name}}`
+   - ❌ Original: `/arilivigni/create-applications-with-the-copilot-CLI`
+
+1. Wait a moment for Visual Studio Code to load.
+
+1. Before we continue let's take a moment to familiarize ourselves with the project folder.
+
+   - The left navigation bar is where you can access the file explorer, debugger, and search.
+   - The lower panel (Ctrl+J) shows the debugger output, allows running terminal commands, and allows configuring the web service ports.
+   - Our calculator.js file is where we'll implement the calculator functionality.
+
+1. At the top of VS Code, locate and click the Copilot icon to open a Copilot Chat panel.
+
+   <img width="150" alt="image" src="https://github.com/user-attachments/assets/5e64db46-95cb-415d-badc-b6b8677f10c1" />
+
+1. If this is your first time using GitHub Copilot, you will have to accept the usage terms to continue.
+    - Click the **Accept** button to continue.
+
+### ⌨️ Activity 2: Install the Standalone Copilot CLI
 
 1. Open your Codespace (if not already open)
 1. Install the standalone GitHub Copilot CLI by running:
@@ -56,7 +85,13 @@ Issue templates help maintain consistency when team members create issues. This 
 > [!TIP]
 > After installation, you can use the `copilot` command anywhere in your terminal to start an interactive session!
 
-### ⌨️ Activity 2: Create an Issue Using Copilot CLI
+### ⌨️ Activity 3: Create an Issue Using Copilot CLI
+
+> [!NOTE]
+> - Keep in mind that the Copilot agent mode is conversational so it may ask you questions and you can ask it questions too.
+> - When using Copilot Chat, you can select the **Agent** mode instead of **Ask** or **Edit** from the drop down.
+>
+>   <img src="https://github.com/user-attachments/assets/b9e291be-d835-4de0-ac1c-35a6ec3ea72d" width=30% height=30%>
 
 1. Start an interactive Copilot CLI session:
    ```bash
