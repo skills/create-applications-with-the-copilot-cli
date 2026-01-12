@@ -92,16 +92,6 @@ Issue templates help maintain consistency when team members create issues. This 
    > copilot --version
    > ```
 
-1. Start Copilot CLI and authenticate with your GitHub account:
-
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
-   > ```prompt
-   > copilot
-   > ```
-   >
-   > Follow the prompts to complete authentication if this is your first time.
-
 > [!TIP]
 > After installation, you can use the `copilot` command anywhere in your terminal to start an interactive session!
 
@@ -115,13 +105,24 @@ Issue templates help maintain consistency when team members create issues. This 
    > copilot
    > ```
 
+1. Authorize with GitHub (if not already authenticated):
+
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > !gh auth login
+   > ```
+
 1. Ask Copilot CLI to help you create a feature request issue for the calculator app:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Help me create a GitHub issue for a Node.js CLI calculator app using the issue template. I want to request a feature for basic arithmetic operations including addition, subtraction, multiplication, and division. The calculator should be implemented in calculator.js.
+   > Create a GitHub issue for a Node.js CLI calculator app using the issue template as the format. I want to request a feature for basic arithmetic operations including addition, subtraction, multiplication, and division. The calculator should be implemented in calculator.js.
    > ```
+
+   > [!NOTE]
+   > Copilot CLI may ask to confirm creating the issue and using `gh issue`. Respond **yes** to creating the issue and **"Yes, and approve `gh issue` for the rest of the running session"**.
 
 1. Copilot CLI will help you draft and create the issue. Follow the prompts to:
 
