@@ -105,7 +105,10 @@ Issue templates help maintain consistency when team members create issues. This 
    > copilot
    > ```
 
-1. Authorize with GitHub (if not already authenticated):
+   > [!NOTE]
+   > When starting Copilot CLI, you may be prompted to add this folder to the trusted folder list and to key bindings. Respond **yes** to both prompts to continue.
+
+2. Authorize with GitHub (if not already authenticated):
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -113,7 +116,7 @@ Issue templates help maintain consistency when team members create issues. This 
    > !gh auth login
    > ```
 
-1. Ask Copilot CLI to help you create a feature request issue for the calculator app:
+3. Ask Copilot CLI to help you create a feature request issue for the calculator app:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -124,7 +127,7 @@ Issue templates help maintain consistency when team members create issues. This 
    > [!NOTE]
    > Copilot CLI may ask to confirm creating the issue and using `gh issue`. Respond **yes** to creating the issue and **"Yes, and approve `gh issue` for the rest of the running session"**.
 
-1. Copilot CLI will help you draft and create the issue. Follow the prompts to:
+4. Copilot CLI will help you draft and create the issue. Follow the prompts to:
 
    - **Feature description**: Create a basic Node.js CLI calculator with addition, subtraction, multiplication, and division operations
    - **Use case**: Learning to use Copilot CLI for code generation and development
