@@ -14,7 +14,27 @@
         "GitHub.copilot-chat"
       ],
       "settings": {
-        "files.autoSave": "afterDelay"
+        "files.autoSave": "afterDelay",
+        "workbench.statusBar.visible": false,
+        "workbench.sideBar.visible": false,
+        "workbench.panel.defaultLocation": "bottom",
+        "workbench.editor.showTabs": "none",
+        "breadcrumbs.enabled": false,
+        "editor.minimap.enabled": false,
+        "workbench.startupEditor": "none",
+        "terminal.integrated.hideOnLastClosed": false,
+        "github.copilot.enable": {
+          "*": false
+        },
+        "github.copilot.editor.enableAutoCompletions": false,
+        "workbench.activityBar.location": "hidden",
+        "workbench.activityBar.visible": false,
+        "workbench.explorer.enabled": false,
+        "github.copilot-chat.enable": false,
+        "terminal.integrated.defaultLocation": "editor",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.closeOnFileDelete": true
       }
     }
   },
