@@ -26,7 +26,7 @@ The standalone Copilot CLI helps maintain development momentum by:
 
 #### Delegating Larger Tasks
 
-For more complex tasks, you can use the `/delegate` command:
+For more complex tasks, you can use the `/delegate` command exampled below to assign work to the Copilot coding agent:
 
 > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
 >
@@ -42,6 +42,9 @@ Copilot coding agent will:
 3. Work on the task autonomously
 4. Stream output to your terminal
 5. Request your review when complete
+
+> [!NOTE]
+> Using the `/delegate` command to leverage the Copilot Coding Agent (CCA) will consume premium requests from your GitHub Copilot subscription. Regular Copilot CLI commands do not require premium requests.
 
 #### Testing and Improvement Workflows
 
@@ -71,7 +74,9 @@ As you add features, Copilot CLI can help you:
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Help me create a GitHub issue to add more operations to my calculator. I want to add modulo, exponentiation (power), and square root functions with proper error handling using the feature request issue template.
+   > Help me create a GitHub issue to add more operations to my calculator. 
+   > I want to add modulo, exponentiation (power), and square root functions 
+   > with proper error handling using the feature request issue template.
    > ```
 
 1. Work with Copilot CLI to implement the new operations:
@@ -79,26 +84,30 @@ As you add features, Copilot CLI can help you:
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Help me add these functions to my calculator.js based on issue #3:
+   > Help me add these functions to my calculator.js based on latest issue created:
    > 1. modulo(a, b) - returns the remainder of a divided by b
    > 2. power(base, exponent) - returns base raised to the exponent
    > 3. squareRoot(n) - returns the square root of n with error handling for negative numbers
    > ```
 
-   1. Alternatively, use the headless mode:
+   1. Optional alternatively, use the headless mode:
 
       > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
       >
       > ```prompt
-      > copilot -p "Add modulo, exponentiation (power), and square root functions to a Node.js calculator module. Include proper error handling for edge cases like negative square roots."
+      > copilot -p "Add modulo, exponentiation (power), and square root functions to a Node.js calculator module. 
+      > Include proper error handling for edge cases like negative square roots."
       > ```
 
-1. Test your new functions:
+1. Test your new functions and add tests:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Test the new calculator functions: modulo with 5 % 2, power with 2 ^ 3, and square root with √16
+   > Test the new calculator functions: modulo with 5 % 2, power with 2 ^ 3, and square root with √16.
+   > Add these tests to a tests/calculator.test.js file using a popular Node.js testing framework.
+   > Make sure to include edge case tests like division by zero and square root of negative numbers.
+   > Make sure all tests pass.
    > ```
 
 1. Commit your changes:
@@ -110,9 +119,6 @@ As you add features, Copilot CLI can help you:
 
 > [!TIP]
 > Use `/share` in your Copilot CLI session to save your conversation as a Markdown file or GitHub gist for future reference!
-
-> [!NOTE]
-> Creating this second issue will complete the exercise and trigger the review workflow!
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

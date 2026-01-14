@@ -88,13 +88,13 @@ When you have larger tasks, you can delegate them to Copilot coding agent:
    > Make sure to create the 'src' directory and put all the app code for the calculator there.
    > ```
 
-   1. Alternatively, use the headless mode with a prompt:
+   1. Optional alternatively, use the headless mode with a prompt:
 
       > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
       >
       > ```prompt
       > copilot -p "@images/js-calculator.png help me create a Node.js CLI calculator app based on this image
-      > and all the math operations shown and detailed in issue #2.
+      > and all the math operations shown and detailed in the latest issue in this repository.
       > Make sure to create the 'src' directory and put all the app code for the calculator there."
       > ```
 
@@ -115,6 +115,7 @@ When you have larger tasks, you can delegate them to Copilot coding agent:
    > Use a popular Node.js testing framework and place the tests in a tests directory.
    > Include tests for all math operations: addition, subtraction, multiplication, division,
    > modulo, and exponentiation. Also test edge cases like division by zero.
+   > Run the tests and ensure all pass.
    > ```
   
 1. Once satisfied with the code, commit your changes through Copilot CLI:

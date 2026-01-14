@@ -121,7 +121,9 @@ Issue templates help maintain consistency when team members create issues. This 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Create a GitHub issue for a Node.js CLI calculator app using the issue template as the format. I want to request a feature for basic arithmetic operations including addition, subtraction, multiplication, and division. The calculator should be implemented in calculator.js.
+   > Create a GitHub issue for a Node.js CLI calculator app using the issue template as the format.
+   > I want to request a feature for basic arithmetic operations including addition, subtraction, multiplication, and division.
+   > The calculator should be implemented in calculator.js.
    > ```
 
    > [!NOTE]
