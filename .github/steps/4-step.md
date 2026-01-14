@@ -77,9 +77,9 @@ The Copilot CLI enables you to:
    > "Add more operations" issues so they close automatically when merged.
    > ```
 
-   > [!TIP]
-   > You can manually link issues by adding "Closes #<issue-number>" in the PR description,
-   > or use GitHub CLI commands like `gh pr edit` to manage the linkage.
+> [!TIP]
+> You can manually link issues by adding "Closes #<issue-number>" in the PR description,
+> or use GitHub CLI commands like `gh pr edit` to manage the linkage.
 
 4. Review the pull request status:
 
@@ -99,10 +99,10 @@ The Copilot CLI enables you to:
    > This will automatically close both linked issues.
    > ```
 
-   > [!NOTE]
-   > When you merge a PR that's linked to issues using "Closes #<issue-number>",
-   > GitHub automatically closes those issues. The squash merge option keeps your
-   > main branch history clean.
+> [!NOTE]
+> When you merge a PR that's linked to issues using "Closes #<issue-number>",
+> GitHub automatically closes those issues. The squash merge option keeps your
+> main branch history clean.
 
 6. Verify that both issues are now closed:
 
