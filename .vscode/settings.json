@@ -1,0 +1,15 @@
+{
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": false,
+    "workbench.sideBar.visible": false,
+    "workbench.panel.defaultLocation": "bottom",
+    "workbench.editor.showTabs": "none",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "terminal.integrated.hideOnLastClosed": false,
+    "github.copilot.enable": {
+        "*": false
+    },
+    "github.copilot.editor.enableAutoCompletions": false
+}
