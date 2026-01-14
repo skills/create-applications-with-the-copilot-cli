@@ -1,0 +1,152 @@
+name: Step 4 # Last step of the exercise
+
+on:
+  workflow_dispatch:
+  issues:
+    types:
+      - opened
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+
+env:
+  REVIEW_FILE: ".github/steps/x-review.md"
+
+jobs:
+  find_exercise:
+    name: Find Exercise Issue
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+
+  check_step_work:
+    name: Check step work
+    runs-on: ubuntu-latest
+    needs: [find_exercise]
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Get response templates
+        uses: actions/checkout@v5
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.7.0
+
+      - name: Find last comment
+        id: find-last-comment
+        uses: peter-evans/find-comment@v3
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          direction: last
+
+      - name: Update comment - checking work
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
+          file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
+          edit-mode: replace
+
+      - name: Check if issue title contains Calculator or Operations
+        id: check-issue-title
+        continue-on-error: true
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          if [[ "$ISSUE_TITLE" =~ [Cc]alculator ]] || [[ "$ISSUE_TITLE" =~ [Oo]perations ]]; then
+            echo "Issue title contains relevant keyword"
+            exit 0
+          else
+            echo "Issue title does not contain relevant keyword"
+            exit 1
+          fi
+
+      - name: Check if at least 3 issues exist
+        id: check-issue-count
+        continue-on-error: true
+        run: |
+          ISSUE_COUNT=$(gh issue list --repo ${{ github.repository }} --state all --json number --jq 'length')
+          echo "Found $ISSUE_COUNT issues"
+          if [ "$ISSUE_COUNT" -ge 3 ]; then
+            echo "At least 3 issues exist"
+            exit 0
+          else
+            echo "Less than 3 issues exist"
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update comment - step results
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
+          edit-mode: replace
+          file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
+          vars: |
+            step_number: 4
+            results_table:
+              - description: "Issue title contains 'Calculator' or 'Operations'"
+                passed: ${{ steps.check-issue-title.outcome == 'success' }}
+              - description: "At least 3 issues exist in repository"
+                passed: ${{ steps.check-issue-count.outcome == 'success' }}
+
+      - name: Fail job if not all checks passed
+        if: contains(steps.*.outcome, 'failure')
+        run: exit 1
+
+  post_review_content:
+    name: Post review content
+    needs: [find_exercise, check_step_work]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Get response templates
+        uses: actions/checkout@v5
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.7.0
+
+      - name: Create comment - step finished - final review next
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
+
+      - name: Create comment - add review content
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: ${{ env.REVIEW_FILE }}
+
+      - name: Disable current workflow
+        run: gh workflow disable "${{github.workflow}}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  finish_exercise:
+    name: Finish Exercise
+    needs: [find_exercise, post_review_content]
+    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.7.0
+    with:
+      issue-url: ${{ needs.find_exercise.outputs.issue-url }}
+      exercise-title: "Copilot CLI: Create applications with the Copilot CLI"

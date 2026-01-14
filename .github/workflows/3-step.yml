@@ -1,10 +1,10 @@
-name: Step 3 # Last step of the exercise
+name: Step 3
 
 on:
   workflow_dispatch:
-  issues:
-    types:
-      - opened
+  push:
+    paths:
+      - 'src/calculator-functions.js'
 
 permissions:
   contents: write
@@ -12,7 +12,7 @@ permissions:
   issues: write
 
 env:
-  REVIEW_FILE: ".github/steps/x-review.md"
+  STEP_4_FILE: ".github/steps/4-step.md"
 
 jobs:
   find_exercise:
@@ -55,35 +55,21 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      - name: Check if issue title contains Calculator or Operations
-        id: check-issue-title
+      - name: Check if calculator-functions.js has multiply function
+        id: check-multiply-function
         continue-on-error: true
-        env:
-          ISSUE_TITLE: ${{ github.event.issue.title }}
-        run: |
-          if [[ "$ISSUE_TITLE" =~ [Cc]alculator ]] || [[ "$ISSUE_TITLE" =~ [Oo]perations ]]; then
-            echo "Issue title contains relevant keyword"
-            exit 0
-          else
-            echo "Issue title does not contain relevant keyword"
-            exit 1
-          fi
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: src/calculator-functions.js
+          keyphrase: multiply
 
-      - name: Check if at least 2 issues exist
-        id: check-issue-count
+      - name: Check if calculator-functions.js has divide function
+        id: check-divide-function
         continue-on-error: true
-        run: |
-          ISSUE_COUNT=$(gh issue list --repo ${{ github.repository }} --state all --json number --jq 'length')
-          echo "Found $ISSUE_COUNT issues"
-          if [ "$ISSUE_COUNT" -ge 2 ]; then
-            echo "At least 2 issues exist"
-            exit 0
-          else
-            echo "Less than 2 issues exist"
-            exit 1
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: src/calculator-functions.js
+          keyphrase: divide
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -96,17 +82,17 @@ jobs:
           vars: |
             step_number: 3
             results_table:
-              - description: "Issue title contains 'Calculator' or 'Operations'"
-                passed: ${{ steps.check-issue-title.outcome == 'success' }}
-              - description: "At least 2 issues exist in repository"
-                passed: ${{ steps.check-issue-count.outcome == 'success' }}
+              - description: "Calculator functions has 'multiply' function"
+                passed: ${{ steps.check-multiply-function.outcome == 'success' }}
+              - description: "Calculator functions has 'divide' function"
+                passed: ${{ steps.check-divide-function.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
 
-  post_review_content:
-    name: Post review content
+  post_next_step_content:
+    name: Post next step content
     needs: [find_exercise, check_step_work]
     runs-on: ubuntu-latest
     env:
@@ -124,29 +110,32 @@ jobs:
           path: exercise-toolkit
           ref: v0.7.0
 
-      - name: Create comment - step finished - final review next
+      - name: Create comment - step finished
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
+          file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
+          vars: |
+            next_step_number: 4
 
-      - name: Create comment - add review content
+      - name: Create comment - add step content
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: ${{ env.REVIEW_FILE }}
+          file: ${{ env.STEP_4_FILE }}
 
-      - name: Disable current workflow
-        run: gh workflow disable "${{github.workflow}}"
+      - name: Create comment - watching for progress
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "${{github.workflow}}"
+          gh workflow enable "Step 4"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  finish_exercise:
-    name: Finish Exercise
-    needs: [find_exercise, post_review_content]
-    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.7.0
-    with:
-      issue-url: ${{ needs.find_exercise.outputs.issue-url }}
-      exercise-title: "Copilot CLI: Create applications with the Copilot CLI"
