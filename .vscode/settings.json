@@ -17,6 +17,8 @@
     "explorer.autoReveal": false,
     "explorer.openEditors.visible": 0,
     "github.copilot-chat.enabled": false,
+    "chat.editor.show": false,
+    "workbench.panel.chat.view.enabled": false,
     "terminal.integrated.defaultLocation": "editor",
     "terminal.integrated.defaultProfile.linux": "bash",
     "workbench.editor.enablePreview": false,
@@ -27,5 +29,8 @@
     "workbench.startupEditor": "none",
     "workbench.tips.enabled": false,
     "chat.commandCenter.enabled": false,
-    "window.openFilesInNewWindow": "off"
+    "window.openFilesInNewWindow": "off",
+    "terminal.integrated.automationProfile.linux": null,
+    "workbench.action.terminal.focus": true,
+    "terminal.integrated.showOnStartup": "always"
 }

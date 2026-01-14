@@ -31,6 +31,8 @@
         "workbench.activityBar.visible": false,
         "workbench.explorer.enabled": false,
         "github.copilot-chat.enable": false,
+        "chat.editor.show": false,
+        "workbench.panel.chat.view.enabled": false,
         "terminal.integrated.defaultLocation": "editor",
         "terminal.integrated.defaultProfile.linux": "bash",
         "workbench.editor.enablePreview": false,
@@ -40,7 +42,10 @@
         "workbench.panel.opensMaximized": "always",
         "workbench.startupEditor": "none",
         "workbench.tips.enabled": false,
-        "window.openFilesInNewWindow": "off"
+        "window.openFilesInNewWindow": "off",
+        "terminal.integrated.automationProfile.linux": null,
+        "workbench.action.terminal.focus": true,
+        "terminal.integrated.showOnStartup": "always"
       }
     }
   },
