@@ -105,8 +105,8 @@ Issue templates help maintain consistency when team members create issues. This 
    > copilot
    > ```
 
-   > [!NOTE]
-   > When starting Copilot CLI, you may be prompted to add this folder to the trusted folder list and to key bindings. Respond **yes** to both prompts to continue.
+> [!NOTE]
+> When starting Copilot CLI, you may be prompted to add this folder to the trusted folder list and to key bindings. Respond **yes** to both prompts to continue.
 
 2. Authorize with GitHub (if not already authenticated):
 
@@ -126,8 +126,8 @@ Issue templates help maintain consistency when team members create issues. This 
    > The calculator should be implemented in calculator.js.
    > ```
 
-   > [!NOTE]
-   > Copilot CLI may ask to confirm creating the issue and using `gh issue`. Respond **yes** to creating the issue and **"Yes, and approve `gh issue` for the rest of the running session"**.
+> [!NOTE]
+> Copilot CLI may ask to confirm creating the issue and using `gh issue`. Respond **yes** to creating the issue and **"Yes, and approve `gh issue` for the rest of the running session"**.
 
 4. Copilot CLI will help you draft and create the issue. Follow the prompts to:
 
