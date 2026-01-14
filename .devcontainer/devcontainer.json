@@ -46,7 +46,8 @@
         "window.openFilesInNewWindow": "off",
         "terminal.integrated.automationProfile.linux": null,
         "workbench.action.terminal.focus": true,
-        "terminal.integrated.showOnStartup": "always"
+        "terminal.integrated.showOnStartup": "always",
+        "workbench.panel.opensMaximized": "always"
       }
     }
   },
