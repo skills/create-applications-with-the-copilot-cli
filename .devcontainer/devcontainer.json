@@ -14,11 +14,44 @@
         "GitHub.copilot-chat"
       ],
       "settings": {
-        "files.autoSave": "afterDelay"
+        "files.autoSave": "afterDelay",
+        "workbench.statusBar.visible": false,
+        "workbench.sideBar.visible": false,
+        "workbench.panel.defaultLocation": "bottom",
+        "workbench.editor.showTabs": "none",
+        "breadcrumbs.enabled": false,
+        "editor.minimap.enabled": false,
+        "workbench.startupEditor": "none",
+        "terminal.integrated.hideOnLastClosed": false,
+        "github.copilot.enable": {
+          "*": false
+        },
+        "github.copilot.editor.enableAutoCompletions": false,
+        "workbench.activityBar.location": "hidden",
+        "workbench.activityBar.visible": false,
+        "workbench.explorer.enabled": false,
+        "github.copilot-chat.enable": false,
+        "chat.disableAIFeatures": true,
+        "chat.editor.show": false,
+        "workbench.panel.chat.view.enabled": false,
+        "terminal.integrated.defaultLocation": "editor",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.closeOnFileDelete": true,
+        "workbench.layoutControl.enabled": false,
+        "workbench.layoutControl.type": "hidden",
+        "workbench.panel.opensMaximized": "always",
+        "workbench.startupEditor": "none",
+        "workbench.tips.enabled": false,
+        "window.openFilesInNewWindow": "off",
+        "terminal.integrated.automationProfile.linux": null,
+        "workbench.action.terminal.focus": true,
+        "terminal.integrated.showOnStartup": "always",
+        "workbench.panel.opensMaximized": "always"
       }
     }
   },
-  "postCreateCommand": "echo '🚀 Welcome to the Copilot CLI Exercise!' && echo '' && echo '📝 To install the standalone GitHub Copilot CLI:' && echo '   Run: npm install -g @github/copilot' && echo '' && echo '📝 Then start Copilot CLI by running:' && echo '   copilot' && echo '' && echo '📖 Open README.md to get started with the exercise!' && echo '' && npm install",
+  "postCreateCommand": "echo '🚀 Welcome to the Copilot CLI Skills Exercise!' && echo '' && echo '📝 To install the standalone GitHub Copilot CLI:' && echo '   Run: npm install -g @github/copilot' && echo '' && echo '📝 Then start Copilot CLI by running:' && echo '   copilot' && echo '' && echo '📖 Open README.md to get started with the exercise!' && echo '' && npm install",
   "onCreateCommand": "chmod +x .devcontainer/setup.sh 2>/dev/null || true",
   "portsAttributes": {
     "3000": {

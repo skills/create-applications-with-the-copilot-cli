@@ -1,0 +1,42 @@
+{
+    "workbench.statusBar.visible": false,
+    "workbench.sideBar.visible": false,
+    "workbench.panel.defaultLocation": "bottom",
+    "workbench.editor.showTabs": "none",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "terminal.integrated.hideOnLastClosed": false,
+    "github.copilot.enable": {
+        "*": false
+    },
+    "github.copilot.editor.enableAutoCompletions": false,
+    "workbench.activityBar.location": "hidden",
+    "workbench.explorer.enabled": false,
+    "explorer.enabled": false,
+    "explorer.autoReveal": false,
+    "explorer.openEditors.visible": 0,
+    "github.copilot-chat.enabled": false,
+    "chat.disableAIFeatures": false,
+    "chat.editor.show": false,
+    "workbench.panel.chat.view.enabled": false,
+    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.layoutControl.enabled": false,
+    "workbench.layoutControl.type": "hidden",
+    "workbench.panel.opensMaximized": "always",
+    "workbench.startupEditor": "none",
+    "workbench.tips.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "window.openFilesInNewWindow": "off",
+    "terminal.integrated.automationProfile.linux": null,
+    "workbench.action.terminal.focus": true,
+    "terminal.integrated.showOnStartup": "always",
+    "workbench.panel.opensMaximized": "always",
+    "github.copilot.chat.editor.entryPoints": {
+        "inlineChat": false
+    },
+    "github.copilot.chat.keyboardShortcuts.enableCmd+I": false
+}

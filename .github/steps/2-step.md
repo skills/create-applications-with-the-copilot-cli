@@ -4,72 +4,143 @@ With the issue created, Duck works with the standalone Copilot CLI interactively
 
 ### 📖 Theory: Collaborative Development with Copilot CLI
 
-**Interactive Development with Copilot CLI**
+#### Interactive Development with Copilot CLI
 
 The standalone Copilot CLI (`copilot` command) provides a rich interactive experience for development:
+
 - Start a session by simply running `copilot` in your terminal
 - Have natural conversations about your code and get intelligent suggestions
 - Generate boilerplate code based on your requirements
 - Use the latest AI models for cutting-edge responses
 - Share your session using the `/share` command to save as Markdown or a gist
 
-**Custom Agents**
+#### Custom Agents
 
 Copilot CLI supports custom agents that you can define in your repository:
+
 - Create agent profiles in `.github/agents/` directory
 - Encode specialized prompts, tool selections, and workflows
 - Invoke agents using `/agent <name>` command
 - Great for documentation, infrastructure, security, or domain-specific tasks
 
-**Delegating Tasks**
+#### Delegating Tasks
 
 When you have larger tasks, you can delegate them to Copilot coding agent:
+
 - Use `/delegate TASK-DESCRIPTION` to assign work
 - Copilot creates a new branch and draft pull request
 - The coding agent works autonomously in the background
 - Review the changes when complete
 
+> [!NOTE]
+> Using the `/delegate` command to leverage the Copilot Coding Agent (CCA) will consume premium requests from your GitHub Copilot subscription. Regular Copilot CLI commands do not require premium requests.
+
 > [!TIP]
 > Use the `/share` command to save your Copilot CLI chat sessions as Markdown files or GitHub gists for future reference!
 
-**References:**
-- [Using GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli)
-- [Custom agents in Copilot CLI](https://github.blog/changelog/2025-10-28-github-copilot-cli-use-custom-agents-and-delegate-to-copilot-coding-agent/)
-- [About custom agents](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-custom-agents)
+> [!NOTE]
+> References:
+>
+> - [Using GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli)
+> - [Custom agents in Copilot CLI](https://github.blog/changelog/2025-10-28-github-copilot-cli-use-custom-agents-and-delegate-to-copilot-coding-agent/)
+> - [About custom agents](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-custom-agents)
 
-### ⌨️ Activity: Generate Calculator Code with Copilot CLI
+> [!IMPORTANT]
+> You may need to authenticate with GitHub before using GitHub CLI commands. Use the `/login` command once you are in the Copilot CLI interactively.
+
+### ⌨️ Activity: Create a New Branch for the Calculator App
+
+1. Create and push a new branch called `create-calc-app`:
+
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > copilot -p "Create and push a new branch called 'create-calc-app'"
+   > ```
+
+> [!TIP]
+> Use the `!` command in Copilot CLI to execute shell commands directly from your chat session. For example, to create and push the branch without leaving chat:
+>
+> ```prompt
+> !git checkout -b create-calc-app && git push -u origin create-calc-app
+> ```
+>
+> Verify the current branch afterward:
+>
+> ```prompt
+> !git branch --show-current
+> ```
+
+### ⌨️ Activity: Generate Calculator Code with Copilot CLI based on an Image
 
 1. Start an interactive Copilot CLI session:
-   ```bash
-   copilot
-   ```
 
-1. Ask Copilot CLI to help you create the calculator functions:
-   ```
-   Help me create a Node.js calculator module with functions for addition, subtraction, multiplication, and division. The functions should be exported so they can be used in other files.
-   ```
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > copilot --allow-all
+   > ```
 
-1. Alternatively, use the headless mode with a prompt:
-   ```bash
-   copilot -p "Create JavaScript calculator functions for add, subtract, multiply, and divide that can be exported from a Node.js module"
-   ```
+1. Ask Copilot CLI to help you create the calculator functions based on the image and the GitHub issue created earlier:
 
-1. Update your `calculator.js` file with the generated code. You can also ask Copilot for explanations:
-   ```bash
-   copilot -p "Explain how module.exports works in Node.js"
-   ```
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > @images/js-calculator.png help me create a Node.js CLI calculator app 
+   > based on this image and all the math operations shown and detailed
+   > in the latest issue in this repository.
+   > Make sure to create the 'src' directory 
+   > and put all the app code for the calculator there.
+   > ```
 
-1. Test your calculator functions:
-   ```bash
-   node -e "const calc = require('./calculator'); console.log('2 + 3 =', calc.add(2, 3)); console.log('10 - 4 =', calc.subtract(10, 4));"
-   ```
+   1. Optional alternatively, use the headless mode with a prompt:
 
-1. Commit your changes:
-   ```bash
-   git add calculator.js
-   git commit -m "Implement basic calculator operations"
-   git push
-   ```
+      > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+      >
+      > ```prompt
+      > copilot -p "@images/js-calculator.png help me create a Node.js CLI calculator app 
+      > based on this image and all the math operations shown and detailed
+      > in the latest issue in this repository.
+      > Make sure to create the 'src' directory
+      > and put all the app code for the calculator there."
+      > ```
+
+> [!NOTE]
+> While this example uses an image of a web JavaScript calculator, it demonstrates how you can use files (including images) with the Copilot CLI to provide context for your requests.
+
+1. Run and test your calculator functions by asking Copilot CLI:
+
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > Run and test the calculator functions with some example operations 
+   > shown in the image @images/calc-basic-operations.png.
+   > ```
+
+1. Ask Copilot CLI to create comprehensive tests for the calculator functions:
+
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > Create comprehensive unit tests for all the calculator functions:
+   >- Expand tests based on the following example:
+   >   - @images/calc-basic-operations.png
+   > - Add these tests to a src/tests/calculator.test.js file
+   > - Use a popular Node.js testing framework if one isn't installed
+   > - addition, subtraction, multiplication, and division
+   > - test edge cases like division by zero
+   > - Make sure all tests run and pass
+   > ```
+  
+1. Once satisfied with the code, commit your changes through Copilot CLI:
+
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > Add all calculator files to git.
+   > Commit with message "Implement basic calculator operations" 
+   > Push the changes
+   > ```
 
 > [!TIP]
 > You can paste or drag-and-drop images into Copilot CLI to provide visual context for your questions!

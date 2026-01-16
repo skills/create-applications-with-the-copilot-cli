@@ -1,12 +1,10 @@
-name: Step 2
+name: Step 3
 
 on:
   workflow_dispatch:
   push:
-    branches:
-      - create-calc-app
     paths:
-      - 'src/*.js'
+      - 'src/tests/*.js'
 
 permissions:
   contents: write
@@ -14,7 +12,7 @@ permissions:
   issues: write
 
 env:
-  STEP_3_FILE: ".github/steps/3-step.md"
+  STEP_4_FILE: ".github/steps/4-step.md"
 
 jobs:
   find_exercise:
@@ -57,37 +55,29 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      - name: Check if calculator.js has basic functions
-        id: check-add-function
+      - name: Check if calculator.tests.js has multiply test
+        id: check-multiply-test
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
-          text-file: src/calculator.js
-          keyphrase: add
-
-      - name: Check if calculator.js has subtract function
-        id: check-subtract-function
-        continue-on-error: true
-        uses: skills/action-keyphrase-checker@v1
-        with:
-          text-file: src/calculator.js
-          keyphrase: subtract
-
-      - name: Check if calculator.js has multiply function
-        id: check-multiply-function
-        continue-on-error: true
-        uses: skills/action-keyphrase-checker@v1
-        with:
-          text-file: src/calculator.js
+          text-file: src/tests/calculator.tests.js
           keyphrase: multiply
 
-      - name: Check if calculator.js has divide function
-        id: check-divide-function
+      - name: Check if calculator.tests.js has divide test
+        id: check-divide-test
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
-          text-file: src/calculator.js
+          text-file: src/tests/calculator.tests.js
           keyphrase: divide
+
+      - name: Check if calculator.tests.js has square root test
+        id: check-sqrt-test
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: src/tests/calculator.tests.js
+          keyphrase: sqrt
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -98,16 +88,14 @@ jobs:
           edit-mode: replace
           file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           vars: |
-            step_number: 2
+            step_number: 3
             results_table:
-              - description: "Calculator has 'add' function"
-                passed: ${{ steps.check-add-function.outcome == 'success' }}
-              - description: "Calculator has 'subtract' function"
-                passed: ${{ steps.check-subtract-function.outcome == 'success' }}
-              - description: "Calculator has 'multiply' function"
-                passed: ${{ steps.check-multiply-function.outcome == 'success' }}
-              - description: "Calculator has 'divide' function"
-                passed: ${{ steps.check-divide-function.outcome == 'success' }}
+              - description: "Calculator tests has 'multiply' test"
+                passed: ${{ steps.check-multiply-test.outcome == 'success' }}
+              - description: "Calculator tests has 'divide' test"
+                passed: ${{ steps.check-divide-test.outcome == 'success' }}
+              - description: "Calculator tests has 'square root' test"
+                passed: ${{ steps.check-sqrt-test.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
@@ -139,14 +127,14 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
           vars: |
-            next_step_number: 3
+            next_step_number: 4
 
       - name: Create comment - add step content
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: ${{ env.STEP_3_FILE }}
+          file: ${{ env.STEP_4_FILE }}
 
       - name: Create comment - watching for progress
         uses: GrantBirki/comment@v2.1.1
@@ -158,6 +146,6 @@ jobs:
       - name: Disable current workflow and enable next one
         run: |
           gh workflow disable "${{github.workflow}}"
-          gh workflow enable "Step 3"
+          gh workflow enable "Step 4"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

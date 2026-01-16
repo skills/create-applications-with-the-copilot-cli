@@ -1,10 +1,10 @@
-name: Step 3 # Last step of the exercise
+name: Step 4 # Last step of the exercise
 
 on:
   workflow_dispatch:
-  issues:
+  pull_request:
     types:
-      - opened
+      - closed
 
 permissions:
   contents: write
@@ -17,7 +17,7 @@ env:
 jobs:
   find_exercise:
     name: Find Exercise Issue
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.3
 
   check_step_work:
     name: Check step work
@@ -36,7 +36,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.7.0
+          ref: v0.7.3
 
       - name: Find last comment
         id: find-last-comment
@@ -69,17 +69,17 @@ jobs:
             exit 1
           fi
 
-      - name: Check if at least 2 issues exist
+      - name: Check if at least 3 issues exist
         id: check-issue-count
         continue-on-error: true
         run: |
           ISSUE_COUNT=$(gh issue list --repo ${{ github.repository }} --state all --json number --jq 'length')
           echo "Found $ISSUE_COUNT issues"
-          if [ "$ISSUE_COUNT" -ge 2 ]; then
-            echo "At least 2 issues exist"
+          if [ "$ISSUE_COUNT" -ge 3 ]; then
+            echo "At least 3 issues exist"
             exit 0
           else
-            echo "Less than 2 issues exist"
+            echo "Less than 3 issues exist"
             exit 1
           fi
         env:
@@ -94,11 +94,11 @@ jobs:
           edit-mode: replace
           file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           vars: |
-            step_number: 3
+            step_number: 4
             results_table:
               - description: "Issue title contains 'Calculator' or 'Operations'"
                 passed: ${{ steps.check-issue-title.outcome == 'success' }}
-              - description: "At least 2 issues exist in repository"
+              - description: "At least 3 issues exist in repository"
                 passed: ${{ steps.check-issue-count.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
@@ -122,7 +122,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.7.0
+          ref: v0.7.3
 
       - name: Create comment - step finished - final review next
         uses: GrantBirki/comment@v2.1.1
@@ -146,7 +146,7 @@ jobs:
   finish_exercise:
     name: Finish Exercise
     needs: [find_exercise, post_review_content]
-    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.7.0
+    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.7.3
     with:
       issue-url: ${{ needs.find_exercise.outputs.issue-url }}
       exercise-title: "Copilot CLI: Create applications with the Copilot CLI"
