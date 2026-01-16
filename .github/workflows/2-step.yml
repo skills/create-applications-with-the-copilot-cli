@@ -3,8 +3,10 @@ name: Step 2
 on:
   workflow_dispatch:
   push:
+    branches:
+      - create-calc-app
     paths:
-      - 'calculator.js'
+      - 'src/*.js'
 
 permissions:
   contents: write
@@ -17,7 +19,7 @@ env:
 jobs:
   find_exercise:
     name: Find Exercise Issue
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.3
 
   check_step_work:
     name: Check step work
@@ -36,7 +38,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.7.0
+          ref: v0.7.3
 
       - name: Find last comment
         id: find-last-comment
@@ -60,7 +62,7 @@ jobs:
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
-          text-file: calculator.js
+          text-file: src/calculator.js
           keyphrase: add
 
       - name: Check if calculator.js has subtract function
@@ -68,8 +70,24 @@ jobs:
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
-          text-file: calculator.js
+          text-file: src/calculator.js
           keyphrase: subtract
+
+      - name: Check if calculator.js has multiply function
+        id: check-multiply-function
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: src/calculator.js
+          keyphrase: multiply
+
+      - name: Check if calculator.js has divide function
+        id: check-divide-function
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: src/calculator.js
+          keyphrase: divide
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -86,6 +104,10 @@ jobs:
                 passed: ${{ steps.check-add-function.outcome == 'success' }}
               - description: "Calculator has 'subtract' function"
                 passed: ${{ steps.check-subtract-function.outcome == 'success' }}
+              - description: "Calculator has 'multiply' function"
+                passed: ${{ steps.check-multiply-function.outcome == 'success' }}
+              - description: "Calculator has 'divide' function"
+                passed: ${{ steps.check-divide-function.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
@@ -108,7 +130,7 @@ jobs:
         with:
           repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.7.0
+          ref: v0.7.3
 
       - name: Create comment - step finished
         uses: GrantBirki/comment@v2.1.1
