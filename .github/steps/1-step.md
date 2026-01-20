@@ -14,7 +14,7 @@ Key capabilities include:
 - Generating code snippets and scripts directly in your terminal
 - Assisting with Git operations and GitHub interactions
 - Supporting image inputs via paste and drag-and-drop for visual context
-- Using the `/share` command to save chat sessions as Markdown files or GitHub gists
+- `/share [file|gist] [path]` - Share session to markdown file or GitHub gist
 - Creating **custom agents** to encode specialized prompts and workflows
 - Delegating tasks to **Copilot coding agent** using the `/delegate` command
 

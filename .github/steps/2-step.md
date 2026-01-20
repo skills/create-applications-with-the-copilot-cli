@@ -12,7 +12,7 @@ The standalone Copilot CLI (`copilot` command) provides a rich interactive exper
 - Have natural conversations about your code and get intelligent suggestions
 - Generate boilerplate code based on your requirements
 - Use the latest AI models for cutting-edge responses
-- Share your session using the `/share` command to save as Markdown or a gist
+- `/share [file|gist] [path]` - Share session to markdown file or GitHub gist
 
 #### Custom Agents
 
