@@ -115,7 +115,7 @@ The Copilot CLI enables you to:
    > ```
 
 > [!TIP]
-> Use `/share` in your Copilot CLI session to save your entire workflow conversation 
+> Use `/share gist` in your Copilot CLI session to save your entire workflow conversation 
 > as a Markdown file or GitHub gist for documentation and future reference!
 
 <details>

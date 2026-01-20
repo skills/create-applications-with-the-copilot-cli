@@ -55,29 +55,29 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      - name: Check if calculator.tests.js has multiply test
-        id: check-multiply-test
+      - name: Check if calculator.tests.js has a modulo test
+        id: check-modulo-test
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: src/tests/calculator.tests.js
-          keyphrase: multiply
+          keyphrase: modulo
 
-      - name: Check if calculator.tests.js has divide test
-        id: check-divide-test
+      - name: Check if calculator.tests.js has a power test
+        id: check-power-test
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: src/tests/calculator.tests.js
-          keyphrase: divide
+          keyphrase: power
 
-      - name: Check if calculator.tests.js has square root test
+      - name: Check if calculator.tests.js has a 'square root' test
         id: check-sqrt-test
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: src/tests/calculator.tests.js
-          keyphrase: sqrt
+          keyphrase: 'square root'
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -90,10 +90,10 @@ jobs:
           vars: |
             step_number: 3
             results_table:
-              - description: "Calculator tests has 'multiply' test"
-                passed: ${{ steps.check-multiply-test.outcome == 'success' }}
-              - description: "Calculator tests has 'divide' test"
-                passed: ${{ steps.check-divide-test.outcome == 'success' }}
+              - description: "Calculator tests has 'modulo' test"
+                passed: ${{ steps.check-modulo-test.outcome == 'success' }}
+              - description: "Calculator tests has 'power' test"
+                passed: ${{ steps.check-power-test.outcome == 'success' }}
               - description: "Calculator tests has 'square root' test"
                 passed: ${{ steps.check-sqrt-test.outcome == 'success' }}
 
