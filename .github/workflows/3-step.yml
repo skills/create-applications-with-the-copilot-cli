@@ -71,13 +71,13 @@ jobs:
           text-file: src/tests/calculator.tests.js
           keyphrase: power
 
-      - name: Check if calculator.tests.js has a 'square root' test
+      - name: Check if calculator.tests.js has sqrt test
         id: check-sqrt-test
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: src/tests/calculator.tests.js
-          keyphrase: 'square root'
+          keyphrase: sqrt
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -94,7 +94,7 @@ jobs:
                 passed: ${{ steps.check-modulo-test.outcome == 'success' }}
               - description: "Calculator tests has 'power' test"
                 passed: ${{ steps.check-power-test.outcome == 'success' }}
-              - description: "Calculator tests has 'square root' test"
+              - description: "Calculator tests has 'sqrt' test"
                 passed: ${{ steps.check-sqrt-test.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
