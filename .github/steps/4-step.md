@@ -86,28 +86,6 @@ The Copilot CLI enables you to:
    > Merge the pull request
    > ```
 
-> [!TIP]
-> You can manually link issues by adding "Closes #<issue-number>" in the PR description,
-> or use GitHub CLI commands like `gh pr edit` to manage the linkage.
-
-4. Review the pull request status:
-
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
-   > ```prompt
-   > Check the status of the pull request, show any reviews from Copilot or other reviewers, 
-   > and confirm that both issues are linked to the PR.
-   > ```
-
-5. Merge the pull request to complete your work:
-
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
-   > ```prompt
-   > Merge the pull request using a squash merge strategy and delete the branch after merging. 
-   > This will automatically close both linked issues.
-   > ```
-
 > [!NOTE]
 > When you merge a PR that's linked to issues using "Closes #<issue-number>",
 > GitHub automatically closes those issues. The squash merge option keeps your
