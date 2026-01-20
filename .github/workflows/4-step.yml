@@ -57,20 +57,6 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      - name: Check if issue title contains Calculator or Operations
-        id: check-issue-title
-        continue-on-error: true
-        env:
-          ISSUE_TITLE: ${{ github.event.issue.title }}
-        run: |
-          if [[ "$ISSUE_TITLE" =~ [Cc]alculator ]] || [[ "$ISSUE_TITLE" =~ [Oo]perations ]]; then
-            echo "Issue title contains relevant keyword"
-            exit 0
-          else
-            echo "Issue title does not contain relevant keyword"
-            exit 1
-          fi
-
       - name: Check if at least 3 issues exist
         id: check-issue-count
         continue-on-error: true
@@ -98,8 +84,6 @@ jobs:
           vars: |
             step_number: 4
             results_table:
-              - description: "Issue title contains 'Calculator' or 'Operations'"
-                passed: ${{ steps.check-issue-title.outcome == 'success' }}
               - description: "At least 3 issues exist in repository"
                 passed: ${{ steps.check-issue-count.outcome == 'success' }}
 

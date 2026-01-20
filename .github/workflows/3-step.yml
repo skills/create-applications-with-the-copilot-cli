@@ -3,6 +3,8 @@ name: Step 3
 on:
   workflow_dispatch:
   push:
+    branches:
+      - create-calc-app
     paths:
       - 'src/tests/*.js'
 
@@ -77,7 +79,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: src/tests/calculator.tests.js
-          keyphrase: 'square root'
+          keyphrase: 'squareroot'
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -94,7 +96,7 @@ jobs:
                 passed: ${{ steps.check-modulo-test.outcome == 'success' }}
               - description: "Calculator tests has 'power' test"
                 passed: ${{ steps.check-power-test.outcome == 'success' }}
-              - description: "Calculator tests has 'square root' test"
+              - description: "Calculator tests has 'squareroot' test"
                 passed: ${{ steps.check-sqrt-test.outcome == 'success' }}
 
       - name: Fail job if not all checks passed

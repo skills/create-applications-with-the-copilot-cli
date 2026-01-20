@@ -101,19 +101,19 @@ Issue templates help maintain consistency when team members create issues. This 
 
 ### ⌨️ Activity 3: Create an Issue Using Copilot CLI
 
-> [!NOTE]
-> `copilot --allow-all` enables all features of Copilot CLI, including those that may require additional permissions. This is useful for development and testing purposes.
-
 1. Start an interactive Copilot CLI session:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > copilot --allow-all
+   > copilot --enable-all-github-mcp-tools
    > ```
 
 > [!NOTE]
+> The `--enable-all-github-mcp-tools` flag enables all GitHub MCP (Model Context Protocol) tools,
+> giving Copilot CLI access to GitHub features like creating issues, managing repositories, and more.
 > When starting Copilot CLI, you may be prompted to add this folder to the trusted folder list and to key bindings. Respond **yes** to both prompts to continue.
+> Depending on your Copilot CLI configuration (for example, if you don't use the `--allow-all` option), you may be prompted to enable certain features during the session. Respond **yes** to these prompts as well.
 
 1. Authorize with GitHub (if not already authenticated):
 
@@ -152,13 +152,16 @@ Issue templates help maintain consistency when team members create issues. This 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Create a GitHub issue for a Node.js CLI calculator app using the feature_request.md template as the format.
+   > Create a GitHub issue for a Node.js CLI calculator app using the feature_request.md template 
+   > as the markdown format.
    > I want to request a feature for basic arithmetic operations including 
    > - addition
    > - subtraction
    > - multiplication
    > - division
-   > The calculator should be implemented in calculator.js and create the issue directly in the current owner/repository on github.com.
+   > The calculator should be implemented in calculator.js
+   > Create the issue directly in the current owner in this session
+   > and repository on github.com using the `gh` CLI commands.
    > ```
 
 > [!NOTE]

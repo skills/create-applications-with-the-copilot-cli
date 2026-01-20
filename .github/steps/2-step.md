@@ -79,8 +79,14 @@ When you have larger tasks, you can delegate them to Copilot coding agent:
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > copilot --allow-all
+   > copilot --allow-all --enable-all-github-mcp-tools
    > ```
+
+> [!NOTE]
+> The `--allow-all` option in the Copilot CLI enables all permissions at once:
+> it is equivalent to `--allow-all-tools`, `--allow-all-paths`, and `--allow-all-urls`.
+> This allows the CLI to access any file path, use any tool, and access any URL without prompting for confirmation.
+> Use with caution, as it grants the CLI full access and automation capabilities.
 
 1. Ask Copilot CLI to help you create the calculator functions based on the image and the GitHub issue created earlier:
 
@@ -124,9 +130,9 @@ When you have larger tasks, you can delegate them to Copilot coding agent:
    >
    > ```prompt
    > Create comprehensive unit tests for all the calculator functions:
-   >- Expand tests based on the following example:
+   > - Expand tests based on the following example:
    >   - @images/calc-basic-operations.png
-   > - Add these tests to a src/tests/calculator.test.js file
+   > - Add these tests to a src/tests/calculator.tests.js file
    > - Use a popular Node.js testing framework if one isn't installed
    > - addition, subtraction, multiplication, and division
    > - test edge cases like division by zero
@@ -141,8 +147,9 @@ When you have larger tasks, you can delegate them to Copilot coding agent:
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Add all calculator files to git.
-   > Commit with message "Implement basic calculator operations" 
+   > Add all calculator and test files to git.
+   > Commit with message "Implement basic calculator operations and tests: 
+   > addition, subtraction, multiplication, division"
    > Push the changes
    > ```
 

@@ -65,22 +65,28 @@ As you add features, Copilot CLI can help you:
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > copilot --allow-all
+   > copilot --allow-all --enable-all-github-mcp-tools
    > ```
+
+> [!NOTE]
+> The `--allow-all` option in the Copilot CLI enables all permissions at once:
+> it is equivalent to `--allow-all-tools`, `--allow-all-paths`, and `--allow-all-urls`.
+> This allows the CLI to access any file path, use any tool, and access any URL without prompting for confirmation.
+> Use with caution, as it grants the CLI full access and automation capabilities.
 
 1. Ask Copilot CLI to help you create another issue for expanding the calculator:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Create a GitHub issue for a Node.js CLI calculator app using the feature_request.md template as the format.
+   > Create a GitHub issue for a Node.js CLI calculator app using the feature_request.md template 
+   > as the markdown format.
    > I want to request a feature to add more operations including 
    > - modulo
    > - exponentiation (power)
    > - square root
-   > The calculator should be implemented in calculator.js and create the issue directly in the current owner/repository on github.com.
+   > Create the issue directly for the current owner and repository in this session on github.com using the `gh` CLI commands.
    > ```
-
 1. Work with Copilot CLI to implement the new operations:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
@@ -121,8 +127,8 @@ As you add features, Copilot CLI can help you:
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Add all calculator files to git.
-   > Commit with message "Implemented additional calculator operations: 
+   > Add all calculator and test files to git.
+   > Commit with message "Implemented additional calculator operations and tests: 
    > modulo, power, square root" 
    > Push the changes
    > ```
