@@ -36,9 +36,9 @@ GitHub Copilot CLI is a **standalone terminal application** that brings the powe
  @             mention files, include contents in context
  Esc           cancel the current operation
  !             execute command in your local shell (bypass Copilot)
- ctrl+c        cancel operation / clear input / exit
- ctrl+d        shutdown
- ctrl+l        clear the screen
+ Ctrl+c        cancel operation / clear input / exit
+ Ctrl+d        shutdown
+ Ctrl+l        clear the screen
 ```
 #### Installation Requirements
 
