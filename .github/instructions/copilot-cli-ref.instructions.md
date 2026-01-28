@@ -9,12 +9,12 @@ Use .github/ISSUE_TEMPLATE/feature_request.md to request all new features for ca
 # Global shortcuts
 
 ```
-@ - mention files, include contents in the current context
-Esc - cancel the current operation
-! - Execute the command in your local shell without sending to Copilot
-Ctrl+c - cancel operation if thinking, clear input if present, or exit
-Ctrl+d - shutdown
-Ctrl+l - clear the screen
+@             mention files, include contents in context
+Esc           cancel the current operation
+!             execute command in your local shell (bypass Copilot)
+ctrl+c        cancel operation / clear input / exit
+ctrl+d        shutdown
+ctrl+l        clear the screen
 ```
 
 ## Expand timeline content shortcuts
