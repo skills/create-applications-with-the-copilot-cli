@@ -108,7 +108,7 @@ As you add features, Copilot CLI can help you:
    > Add tests for the new calculator operations: 
    > - Expand tests based on the following example:
    >   - @images/calc-extended-operations.png
-   > - Add these tests to the existing src/tests/calculator.test.js file
+   > - Add these tests to the existing src/tests/calculator.tests.js file
    > - Use a popular Node.js testing framework if one isn't installed
    > - Make sure to include edge case tests like square root of negative numbers
    > - Make sure all tests run and pass
