@@ -39,6 +39,7 @@ GitHub Copilot CLI is a **standalone terminal application** that brings the powe
  ctrl+c        cancel operation / clear input / exit
  ctrl+d        shutdown
  ctrl+l        clear the screen
+ shift+tab     switch between plan mode and regular interactive mode
 ```
 #### Installation Requirements
 
