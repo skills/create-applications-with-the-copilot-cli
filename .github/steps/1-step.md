@@ -197,7 +197,7 @@ Issue templates help maintain consistency when team members create issues. This 
 > Respond **yes** to creating the issue and
 > **"Yes, and approve `gh issue` or `git config` for the rest of the running session"**.
 
-<img width="40%" height="40%" alt="image" src="https://github.com/user-attachments/assets/925ff1c6-a49c-4e7e-b4b3-222854e91b24" />
+<img width="40%" height="40%" alt="CopilotCLIPerms" src="https://github.com/user-attachments/assets/925ff1c6-a49c-4e7e-b4b3-222854e91b24" />
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
