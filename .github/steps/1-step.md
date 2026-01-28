@@ -171,8 +171,7 @@ Issue templates help maintain consistency when team members create issues. This 
    >
    > ```prompt
    > Create a GitHub issue for a Node.js CLI calculator app using the feature_request.md template
-   > in markdown and format and
-   > that contains "calculator" in the title.
+   > in markdown format that contains "calculator" in the title.
    > I want to request a feature for basic arithmetic operations including 
    > - addition
    > - subtraction
