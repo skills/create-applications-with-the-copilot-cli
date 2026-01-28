@@ -70,7 +70,7 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
 
 ### ⌨️ Activity: Generate Calculator Code with Copilot CLI based on an Image
 
-1. Start an interactive Copilot CLI session:
+1. Start an interactive Copilot CLI session (if not already in a session):
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
