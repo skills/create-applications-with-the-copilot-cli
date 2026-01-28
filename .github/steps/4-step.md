@@ -91,7 +91,7 @@ The Copilot CLI enables you to:
 > GitHub automatically closes those issues. The squash merge option keeps your
 > main branch history clean.
 
-6. Verify that both issues are now closed:
+1. Verify that both issues are now closed:
 
    > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
