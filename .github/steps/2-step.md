@@ -84,7 +84,7 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
 > This allows the CLI to access any file path, use any tool, and access any URL without prompting for confirmation.
 > Use with caution, as it grants the CLI full access and automation capabilities.
 
-1. Ask Copilot CLI to help you create the calculator functions based on the image and the GitHub issue created earlier:
+2. Ask Copilot CLI to help you create the calculator functions based on the image and the GitHub issue created earlier:
 
    > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
@@ -111,7 +111,7 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
 > [!NOTE]
 > While this example uses an image of a web JavaScript calculator, it demonstrates how you can use files (including images) with the Copilot CLI to provide context for your requests.
 
-1. Run and test your calculator functions by asking Copilot CLI:
+3. Run and test your calculator functions by asking Copilot CLI:
 
    > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
@@ -120,7 +120,7 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
    > shown in the image @images/calc-basic-operations.png.
    > ```
 
-1. Ask Copilot CLI to create comprehensive tests for the calculator functions:
+4. Ask Copilot CLI to create comprehensive tests for the calculator functions:
 
    > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
@@ -138,7 +138,7 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
 > [!NOTE]
 > Hit ctrl+o to see output of the passed tests that Copilot CLI ran for you!
   
-1. Once satisfied with the code, commit your changes through Copilot CLI:
+5. Once satisfied with the code, commit your changes through Copilot CLI:
 
    > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
