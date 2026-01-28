@@ -1,4 +1,4 @@
-# Copilot CLI: Create applications with the Copilot CLI
+# Create applications with the Copilot CLI
 
 _Learn to use GitHub Copilot CLI—a standalone terminal application—for issue management and building a Node.js calculator application._
 

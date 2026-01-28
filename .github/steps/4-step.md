@@ -50,17 +50,17 @@ The Copilot CLI enables you to:
 
 ### ⌨️ Activity: Complete Your Pull Request Workflow
 
-1. Start an interactive Copilot CLI session:
+1. Start an interactive Copilot CLI session (if not already in a session):
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
-   > ```prompt
+   > ```bash
    > copilot --allow-all --enable-all-github-mcp-tools
    > ```
 
-1. Create a pull request for your changes and add Copilot as a reviewer:
+2. Create a pull request for your changes and add Copilot as a reviewer:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Create a pull request from the current branch with a title "Add calculator enhancements" 
@@ -69,9 +69,9 @@ The Copilot CLI enables you to:
    > and request a review on the PR.
    > ```
 
-1. Attach the pull request to both issues you created earlier:
+3. Attach the pull request to both issues you created earlier:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Link the pull request I just created to both the "Create a calculator" and 
@@ -80,7 +80,7 @@ The Copilot CLI enables you to:
 
 1. Merge the pull request after Copilot's review is complete:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Merge the pull request
@@ -91,9 +91,9 @@ The Copilot CLI enables you to:
 > GitHub automatically closes those issues. The squash merge option keeps your
 > main branch history clean.
 
-6. Verify that both issues are now closed:
+4. Verify that both issues are now closed:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > List the closed issues in the repository to confirm both the "Create a calculator" 

@@ -4,15 +4,6 @@ Duck wants to expand the calculator with additional operations by creating a new
 
 ### 📖 Theory: Iterative Development with Copilot CLI
 
-#### Iterative Development and Agile Practices
-
-Modern software development follows iterative approaches where features are built incrementally:
-
-- Start with a minimal viable product (MVP)
-- Add features in small, manageable chunks
-- Test and validate each addition
-- Continuously improve based on feedback
-
 #### Maintaining Momentum with Copilot CLI
 
 The standalone Copilot CLI helps maintain development momentum by:
@@ -29,8 +20,11 @@ The standalone Copilot CLI helps maintain development momentum by:
 For more complex tasks, you can use the `/delegate` command exampled below to assign work to the Copilot coding agent:
 
 > ```bash
-> > copilot
-> > /delegate Add modulo, exponentiation, and square root functions to calculator.js with proper error handling
+> copilot
+> ```
+>
+> ```text
+> /delegate Add modulo, exponentiation, and square root functions to calculator.js with proper error handling
 > ```
 
 Copilot coding agent will:
@@ -55,18 +49,7 @@ As you add features, Copilot CLI can help you:
 - Save and share your development sessions using `/share`
 
 > [!IMPORTANT]
-> If you have restarted your codespace you may need to run `copilot --allow-all` and then authenticate with GitHub again by running `!gh auth login` in your terminal,
-> or use `!gh auth login` from within the Copilot CLI session.
-
-### ⌨️ Activity: Add More Operations to the Calculator
-
-1. Start an interactive Copilot CLI session:
-
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
-   > ```prompt
-   > copilot --allow-all --enable-all-github-mcp-tools
-   > ```
+> If you have restarted your codespace you may need to run `copilot --allow-all --enable-all-github-mcp-tools` and then authenticate with GitHub again by running `!gh auth login` from within the Copilot CLI session.
 
 > [!NOTE]
 > The `--allow-all` option in the Copilot CLI enables all permissions at once:
@@ -74,9 +57,19 @@ As you add features, Copilot CLI can help you:
 > This allows the CLI to access any file path, use any tool, and access any URL without prompting for confirmation.
 > Use with caution, as it grants the CLI full access and automation capabilities.
 
+### ⌨️ Activity: Add More Operations to the Calculator
+
+1. Start an interactive Copilot CLI session (if not already in a session):
+
+   > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
+   >
+   > ```bash
+   > copilot --allow-all --enable-all-github-mcp-tools
+   > ```
+
 1. Ask Copilot CLI to help you create another issue for expanding the calculator:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Create a GitHub issue for a Node.js CLI calculator app using the feature_request.md template 
@@ -89,7 +82,7 @@ As you add features, Copilot CLI can help you:
    > ```
 1. Work with Copilot CLI to implement the new operations:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Add these functions to my existing calculator.js based on latest issue created:
@@ -100,7 +93,7 @@ As you add features, Copilot CLI can help you:
 
    1. Optional alternatively, use the headless mode:
 
-      > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+      > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
       >
       > ```prompt
       > copilot -p "Add these functions to my existing calculator.js based on latest issue created:
@@ -111,20 +104,20 @@ As you add features, Copilot CLI can help you:
 
 1. Test your new functions and add tests:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Add tests for the new calculator operations: 
    > - Expand tests based on the following example:
    >   - @images/calc-extended-operations.png
-   > - Add these tests to the existing src/tests/calculator.test.js file
+   > - Add these tests to the existing src/tests/calculator.tests.js file
    > - Use a popular Node.js testing framework if one isn't installed
    > - Make sure to include edge case tests like square root of negative numbers
    > - Make sure all tests run and pass
    > ```
 
 1. Commit your changes:
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Add all calculator and test files to git.

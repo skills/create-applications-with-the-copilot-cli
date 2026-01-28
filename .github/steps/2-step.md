@@ -33,12 +33,6 @@ When you have larger tasks, you can delegate them to Copilot coding agent:
 - Review the changes when complete
 
 > [!NOTE]
-> Using the `/delegate` command to leverage the Copilot Coding Agent (CCA) will consume premium requests from your GitHub Copilot subscription. Regular Copilot CLI commands do not require premium requests.
-
-> [!TIP]
-> Use the `/share` command to save your Copilot CLI chat sessions as Markdown files or GitHub gists for future reference!
-
-> [!NOTE]
 > References:
 >
 > - [Using GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli)
@@ -46,16 +40,15 @@ When you have larger tasks, you can delegate them to Copilot coding agent:
 > - [About custom agents](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-custom-agents)
 
 > [!IMPORTANT]
-> If you have restarted your codespace you may need to run `copilot --allow-all` and then authenticate with GitHub again by running `!gh auth login` in your terminal,
-> or use `!gh auth login` from within the Copilot CLI session.
+> If you have restarted your codespace you may need to run `copilot --allow-all --enable-all-github-mcp-tools` and then authenticate with GitHub again by running `!gh auth login` in the Copilot CLI.
 
 ### ⌨️ Activity: Create a New Branch for the Calculator App
 
 1. Create and push a new branch called `create-calc-app`:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
-   > ```prompt
+   > ```bash
    > copilot -p "Create and push a new branch called 'create-calc-app'"
    > ```
 
@@ -77,11 +70,11 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
 
 ### ⌨️ Activity: Generate Calculator Code with Copilot CLI based on an Image
 
-1. Start an interactive Copilot CLI session:
+1. Start an interactive Copilot CLI session (if not already in a session):
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
-   > ```prompt
+   > ```bash
    > copilot --allow-all --enable-all-github-mcp-tools
    > ```
 
@@ -91,9 +84,9 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
 > This allows the CLI to access any file path, use any tool, and access any URL without prompting for confirmation.
 > Use with caution, as it grants the CLI full access and automation capabilities.
 
-1. Ask Copilot CLI to help you create the calculator functions based on the image and the GitHub issue created earlier:
+2. Ask Copilot CLI to help you create the calculator functions based on the image and the GitHub issue created earlier:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > @images/js-calculator.png help me create a Node.js CLI calculator app 
@@ -105,9 +98,9 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
 
    1. Optional alternatively, use the headless mode with a prompt:
 
-      > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+      > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
       >
-      > ```prompt
+      > ```bash
       > copilot -p "@images/js-calculator.png help me create a Node.js CLI calculator app 
       > based on this image and all the math operations shown and detailed
       > in the latest issue in this owner/repository.
@@ -118,18 +111,18 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
 > [!NOTE]
 > While this example uses an image of a web JavaScript calculator, it demonstrates how you can use files (including images) with the Copilot CLI to provide context for your requests.
 
-1. Run and test your calculator functions by asking Copilot CLI:
+3. Run and test your calculator functions by asking Copilot CLI:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Run and test the calculator functions with some example operations 
    > shown in the image @images/calc-basic-operations.png.
    > ```
 
-1. Ask Copilot CLI to create comprehensive tests for the calculator functions:
+4. Ask Copilot CLI to create comprehensive tests for the calculator functions:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Create comprehensive unit tests for all the calculator functions:
@@ -145,9 +138,9 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
 > [!NOTE]
 > Hit ctrl+o to see output of the passed tests that Copilot CLI ran for you!
   
-1. Once satisfied with the code, commit your changes through Copilot CLI:
+5. Once satisfied with the code, commit your changes through Copilot CLI:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Add all calculator and test files to git.
