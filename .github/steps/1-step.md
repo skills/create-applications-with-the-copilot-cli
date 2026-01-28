@@ -30,6 +30,16 @@ Key capabilities and options to be aware of include:
 - Creating **custom agents** to encode specialized prompts and workflows
 - Delegating tasks to **Copilot coding agent** using the `/delegate` command
 
+#### Global shortcuts
+
+```bash
+ @             mention files, include contents in context
+ Esc           cancel the current operation
+ !             execute command in your local shell (bypass Copilot)
+ ctrl+c        cancel operation / clear input / exit
+ ctrl+d        shutdown
+ ctrl+l        clear the screen
+```
 #### Installation Requirements
 
 To install Copilot CLI, you need:
