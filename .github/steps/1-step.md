@@ -1,7 +1,7 @@
 ## Step 1: Install Copilot CLI and Use the Issue Template
 
-Duck prefers using the terminal and wants to use AI with his terminal.
-He is getting ready to develop a new Node.js CLI calculator app and wants to install the standalone Copilot CLI and work in his terminal to create the application.
+Duck prefers working in the terminal and wants to use AI from there.
+Duck is getting ready to develop a new Node.js CLI calculator app and plans to install the standalone Copilot CLI to build the application from the terminal.
 
 ### 📖 Theory: GitHub Copilot CLI - A Standalone Terminal Application
 
