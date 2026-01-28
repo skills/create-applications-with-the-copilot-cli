@@ -11,7 +11,7 @@ GitHub Copilot CLI is a **standalone terminal application** that brings the powe
 
 <img width="40%" height="40%" alt="CopilotCLI" src="https://github.com/user-attachments/assets/1136ab45-fcc4-43a2-923f-67b797ee2705">
 
-Key capabilities and options to be aware of include:
+#### Key capabilities and options to be aware of include:
 
 - Providing intelligent command suggestions powered by the latest AI models from OpenAI and Google
 - Generating code snippets and scripts directly in your terminal
@@ -177,7 +177,7 @@ Issue templates help maintain consistency when team members create issues. This 
 
 4. Ask Copilot CLI to help you create a feature request issue for the calculator app:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
    > Create a GitHub issue for a Node.js CLI calculator app using the feature_request.md template
