@@ -149,6 +149,8 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
    > Push the changes
    > ```
 
+5. Wait a moment for Mona to check your work, provide feedback, and share the next lesson.
+
 > [!TIP]
 > You can paste or drag-and-drop images into Copilot CLI to provide visual context for your questions!
 
