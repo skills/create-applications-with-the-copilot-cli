@@ -9,7 +9,7 @@ Duck is getting ready to develop a new Node.js CLI calculator app and plans to i
 
 GitHub Copilot CLI is a **standalone terminal application** that brings the power of GitHub Copilot directly to your command line. It is installed via npm and provides a rich interactive experience for developers.
 
-<img width="40%" height="40%" alt="CopilotCLI" src="https://github.com/user-attachments/assets/1136ab45-fcc4-43a2-923f-67b797ee2705">
+<img width="60%" height="60%" alt="CopilotCLI" src="https://github.com/user-attachments/assets/1136ab45-fcc4-43a2-923f-67b797ee2705">
 
 #### Key capabilities and options to be aware of include:
 
@@ -126,9 +126,9 @@ Issue templates help maintain consistency when team members create issues. This 
 > [!NOTE]
 > When starting Copilot CLI, you may be prompted to add this folder to the trusted folder list and to key bindings. Respond **yes** to both prompts to continue.
 
-<img width="40%" height="40%" alt="CopilotCLIAddDir" src="https://github.com/user-attachments/assets/75c16b1c-8377-4a82-97ad-464baf23b77c" />
+<img width="60%" height="60%" alt="CopilotCLIAddDir" src="https://github.com/user-attachments/assets/75c16b1c-8377-4a82-97ad-464baf23b77c" />
 <br />
-<img width="40%" height="40%" alt="CopilotCLITerminalBindings" src="https://github.com/user-attachments/assets/5c5efc46-06e2-4a53-bfe1-5a335adba521" />
+<img width="60%" height="60%" alt="CopilotCLITerminalBindings" src="https://github.com/user-attachments/assets/5c5efc46-06e2-4a53-bfe1-5a335adba521" />
 
 2. Authorize with GitHub (if not already authenticated) in the Copilot CLI:
 
@@ -192,6 +192,9 @@ Issue templates help maintain consistency when team members create issues. This 
    > Create the issue directly in the current owner in this session
    > and repository on github.com using the `gh` CLI commands.
    > ```
+   > 
+
+5. Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
 
 > [!NOTE]
 > Copilot CLI may ask to confirm creating the issue and using `gh issue` and `git config`.

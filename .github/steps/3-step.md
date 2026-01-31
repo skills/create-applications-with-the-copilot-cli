@@ -36,7 +36,7 @@ Copilot coding agent will:
 5. Request your review when complete
 
 > [!NOTE]
-> Using the `/delegate` command to leverage the Copilot Coding Agent (CCA) will consume premium requests from your GitHub Copilot subscription. Regular Copilot CLI commands do not require premium requests.
+> Using the `/delegate` command to leverage the Copilot Coding Agent (CCA) will consume premium requests from your GitHub Copilot subscription. Copilot CLI can be also used with regular models, which don't use premium requests.
 
 #### Testing and Improvement Workflows
 
@@ -125,6 +125,8 @@ As you add features, Copilot CLI can help you:
    > modulo, power, square root" 
    > Push the changes
    > ```
+
+1. Wait a moment for Mona to check your work, provide feedback, and share the next lesson.
 
 > [!TIP]
 > Use `/share` in your Copilot CLI session to save your conversation as a Markdown file or GitHub gist for future reference!

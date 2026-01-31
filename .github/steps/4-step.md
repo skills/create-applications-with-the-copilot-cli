@@ -100,6 +100,8 @@ The Copilot CLI enables you to:
    > and "Add more operations" issues are now closed.
    > ```
 
+5. Wait a moment for Mona to check your work, provide feedback, and share the next lesson.
+
 > [!TIP]
 > Use `/share gist` in your Copilot CLI session to save your entire workflow conversation 
 > as a Markdown file or GitHub gist for documentation and future reference!
