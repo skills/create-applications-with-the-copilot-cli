@@ -178,7 +178,7 @@ Issue templates help maintain consistency when team members create issues. This 
    > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
-   > Create a GitHub issue for a Node.js CLI calculator app using the folowing template
+   > Create a GitHub issue for a Node.js CLI calculator app using the following template
    > .github/ISSUE_TEMPLATE/feature_request.md template and make sure the issue is in a
    > markdown format that contains "calculator" in the title and follows the format of
    > the issue template.
