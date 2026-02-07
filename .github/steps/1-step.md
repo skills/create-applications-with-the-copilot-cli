@@ -9,7 +9,7 @@ Duck is getting ready to develop a new Node.js CLI calculator app and plans to i
 
 GitHub Copilot CLI is a **standalone terminal application** that brings the power of GitHub Copilot directly to your command line. It is installed via npm and provides a rich interactive experience for developers.
 
-<img width="60%" height="60%" alt="CopilotCLI" src="https://github.com/user-attachments/assets/1136ab45-fcc4-43a2-923f-67b797ee2705">
+<img width="60%" height="60%" alt="CopilotCLI" src="../images/copilot-cli.png">
 
 #### Key capabilities and options to be aware of include:
 
@@ -19,7 +19,7 @@ GitHub Copilot CLI is a **standalone terminal application** that brings the powe
 - Supporting image inputs via paste and drag-and-drop for visual context
 - The `--enable-all-github-mcp-tools` flag enables all GitHub MCP (Model Context Protocol) tools, giving Copilot CLI access to GitHub features like creating issues, managing repositories, and more.
 - Depending on your Copilot CLI configuration (for example, if you don't use the `--allow-all` option), you may be prompted to enable certain features during the session. Respond **yes** to these prompts as well.
-- `/session`: Command shows details about your current chat session. 
+- `/session`: Shows details about your current chat session.
 - `/context`: Provides a visual overview of your current token usage
 - `/usage`: Lets you view your session statistics, including:
   - The amount of premium requests used in the current session
@@ -41,6 +41,7 @@ GitHub Copilot CLI is a **standalone terminal application** that brings the powe
  ctrl+l        clear the screen
  shift+tab     switch between plan mode and regular interactive mode
 ```
+
 #### Installation Requirements
 
 To install Copilot CLI, you need:
@@ -72,7 +73,6 @@ Issue templates help maintain consistency when team members create issues. This 
 1. Right-click the below button to open the **Create Codespace** page in a new tab.
 
    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/{{full_repo_name}}?quickstart=1)
-
    - The free tier of Codespaces that comes with all GitHub accounts is fine, assuming you still have minutes available.
    - The default Codespace settings are fine.
 
@@ -80,7 +80,6 @@ Issue templates help maintain consistency when team members create issues. This 
 > This Codespace VS Code environment has been simplified to focus on using the Copilot CLI in the terminal. You'll primarily be working with terminal commands rather than the full VS Code feature set.
 
 1. Confirm the **Repository** field is your copy of the exercise, not the original, then click the green **Create Codespace** button.
-
    - ✅ Your copy: `/{{full_repo_name}}`
    - ❌ Original: `/arilivigni/create-applications-with-the-copilot-CLI`
 
@@ -96,7 +95,6 @@ Issue templates help maintain consistency when team members create issues. This 
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
 
-   >
    > ```bash
    > npm install -g @github/copilot
    > ```
@@ -105,7 +103,6 @@ Issue templates help maintain consistency when team members create issues. This 
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
 
-   >
    > ```bash
    > copilot --version
    > ```
@@ -126,9 +123,9 @@ Issue templates help maintain consistency when team members create issues. This 
 > [!NOTE]
 > When starting Copilot CLI, you may be prompted to add this folder to the trusted folder list and to key bindings. Respond **yes** to both prompts to continue.
 
-<img width="60%" height="60%" alt="CopilotCLIAddDir" src="https://github.com/user-attachments/assets/75c16b1c-8377-4a82-97ad-464baf23b77c" />
+<img width="60%" height="60%" alt="CopilotCLIAddDir" src="../images/copilot-cli-add-directory.png" />
 <br />
-<img width="60%" height="60%" alt="CopilotCLITerminalBindings" src="https://github.com/user-attachments/assets/5c5efc46-06e2-4a53-bfe1-5a335adba521" />
+<img width="60%" height="60%" alt="CopilotCLITerminalBindings" src="../images/copilot-cli-terminal-bindings.png" />
 
 2. Authorize with GitHub (if not already authenticated) in the Copilot CLI:
 
@@ -142,7 +139,6 @@ Issue templates help maintain consistency when team members create issues. This 
 > After running `!gh auth login`, you will be provided with a link and an authentication code. Click the link to open GitHub in your browser, then enter the code to complete the authentication process.
 
 3. Explore useful slash commands in Copilot CLI:
-
    - View your current session information:
 
      > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
@@ -158,7 +154,7 @@ Issue templates help maintain consistency when team members create issues. This 
      > ```prompt
      > /context
      > ```
-   
+
    - View your current usage information:
 
      > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
@@ -168,7 +164,8 @@ Issue templates help maintain consistency when team members create issues. This 
      > ```
 
 > [!NOTE]
-> - `/session`: Command shows details about your current chat session. 
+>
+> - `/session`: Command shows details about your current chat session.
 > - `/context`: Provides a visual overview of your current token usage
 > - `/usage`: Lets you view your session statistics, including:
 >   - The amount of premium requests used in the current session
@@ -181,11 +178,11 @@ Issue templates help maintain consistency when team members create issues. This 
    > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
    >
    > ```prompt
-   > Create a GitHub issue for a Node.js CLI calculator app using the folowing template
+   > Create a GitHub issue for a Node.js CLI calculator app using the following template
    > .github/ISSUE_TEMPLATE/feature_request.md template and make sure the issue is in a
    > markdown format that contains "calculator" in the title and follows the format of
    > the issue template.
-   > I want to request a feature for basic arithmetic operations including 
+   > I want to request a feature for basic arithmetic operations including
    > - addition
    > - subtraction
    > - multiplication
@@ -194,7 +191,6 @@ Issue templates help maintain consistency when team members create issues. This 
    > Create the issue directly in the current owner in this session
    > and repository on github.com using the `gh` CLI commands.
    > ```
-   > 
 
 5. Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
 
@@ -203,7 +199,7 @@ Issue templates help maintain consistency when team members create issues. This 
 > Respond **yes** to creating the issue and
 > **"Yes, and approve `gh issue` or `git config` for the rest of the running session"**.
 
-<img width="40%" height="40%" alt="CopilotCLIPerms" src="https://github.com/user-attachments/assets/925ff1c6-a49c-4e7e-b4b3-222854e91b24" />
+<img width="40%" height="40%" alt="CopilotCLIPerms" src="../images/copilot-cli-permissions.png" />
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
