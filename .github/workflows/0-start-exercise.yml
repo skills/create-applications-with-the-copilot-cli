@@ -19,7 +19,7 @@ jobs:
     if: |
       !github.event.repository.is_template
     name: Start Exercise
-    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.7.3
+    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.8.0
     with:
       exercise-title: "Create applications with the Copilot CLI"
       intro-message: "Let's get you started with GitHub Copilot CLI! We will learn how to use it for issue management and building a Node.js calculator app 🚀"
