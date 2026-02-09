@@ -90,7 +90,7 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
    >
    > ```prompt
    > @images/js-calculator.png help me create a Node.js CLI calculator app 
-   > based only on the math operations in this image and and detailed
+   > based only on the four basic math operations in this image and outlined
    > in the latest issue in this owner/repository.
    > Create the code and put it in the 'src' directory.
    > Make sure the calculator is commented with the operations it supports.
@@ -102,7 +102,7 @@ Use the `!` command in Copilot CLI to execute shell commands directly from your 
       >
       > ```bash
       > copilot -p "@images/js-calculator.png help me create a Node.js CLI calculator app 
-      > based on this image and all the math operations shown and detailed
+      > based only on the four basic math operations in this image and outlined
       > in the latest issue in this owner/repository.
       > Create the code and put it in the 'src' directory.
       > Make sure the calculator is commented with the operations it supports."
