@@ -128,8 +128,8 @@ As you add features, Copilot CLI can help you:
 
 1. Wait a moment for Mona to check your work, provide feedback, and share the next lesson.
 
-> [!TIP]
-> Use `/share` in your Copilot CLI session to save your conversation as a Markdown file or GitHub gist for future reference!
+> [!OPTIONAL]
+> Use `/share gist` in your Copilot CLI session to save your GitHub Skills exercise session as a GitHub gist for future reference!
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

@@ -102,9 +102,9 @@ The Copilot CLI enables you to:
 
 5. Wait a moment for Mona to check your work, provide feedback, and share the next lesson.
 
-> [!TIP]
-> Use `/share gist` in your Copilot CLI session to save your entire workflow conversation 
-> as a Markdown file or GitHub gist for documentation and future reference!
+> [!OPTIONAL]
+> Use `/share gist` in your Copilot CLI session to save your GitHub Skills exercise session
+> as a GitHub gist for documentation and future reference!
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
