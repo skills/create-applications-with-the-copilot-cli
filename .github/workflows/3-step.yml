@@ -79,7 +79,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: src/tests/calculator.tests.js
-          keyphrase: 'squareroot'
+          keyphrase: 'square'
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
