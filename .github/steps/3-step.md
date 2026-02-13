@@ -79,7 +79,9 @@ As you add features, Copilot CLI can help you:
    > - exponentiation (power)
    > - square root
    > Create the issue directly for the current owner and repository in this session on github.com using the `gh` CLI commands.
+   > List the issue link when complete
    > ```
+
 1. Work with Copilot CLI to implement the new operations:
 
    > ![Static Badge](https://img.shields.io/badge/CLI-Prompt-text?style=flat-square&logo=github-copilot&labelColor=8250df&color=fbefff)
