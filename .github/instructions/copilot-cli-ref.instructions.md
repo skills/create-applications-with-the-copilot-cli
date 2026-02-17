@@ -4,8 +4,8 @@ applyTo: "**/**"
 
 # Prompt guidance
 
-Stick to the prompts and context being provided. Don't jump ahead to doing steps
-Only add, commit, and push files when prompted by the user
+Stick to the prompts and context being provided. Don't jump ahead to doing steps.
+Only add, commit, and push files when prompted by the user.
 
 # New features
 
