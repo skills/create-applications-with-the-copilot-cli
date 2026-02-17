@@ -6,11 +6,11 @@ _Congratulations, you've completed this exercise and learned a lot about the sta
 
 Here's a recap of your accomplishments:
 
-- ✅ Install Copilot CLI and Use the Issue Template
-- ✅ Generate a Node.js CLI Calculator App
-- ✅ Expand Calculator Functionality
-- ✅ Write Unit Tests for Calculator Functions
-- ✅ Create, Review, and Merge Your Pull Request
+- ✅ Install the Copilot CLI and Use the issue template to create an issue
+- ✅ Generate a Node.js CLI calculator app
+- ✅ Expand calculator functionality
+- ✅ Write unit tests for calculator functions
+- ✅ Create, Review, and Merge your Pull Request
 
 ### Explore More Copilot CLI Features
 
