@@ -9,7 +9,7 @@ Duck is getting ready to develop a new Node.js CLI calculator app and plans to i
 
 GitHub Copilot CLI is a **standalone terminal application** that brings the power of GitHub Copilot directly to your command line. It is installed via npm and provides a rich interactive experience for developers.
 
-<img width="60%" height="60%" alt="CopilotCLI" src="https://github.com/user-attachments/assets/b39d45c0-477b-492a-9607-61209bb20162" />
+<img width="60%" height="60%" alt="CopilotCLI" src="../images/copilot-cli.png" />
 
 #### Key capabilities and options to be aware of include:
 
@@ -123,9 +123,9 @@ Issue templates help maintain consistency when team members create issues. This 
 > [!NOTE]
 > When starting Copilot CLI, you may be prompted to add this folder to the trusted folder list and to key bindings. Respond **yes** to both prompts to continue.
 
-<img width="60%" height="60%" alt="CopilotCLIAddDir" src="https://github.com/user-attachments/assets/17071b30-212d-4b82-bad4-4d999478f505" />
+<img width="60%" height="60%" alt="CopilotCLIAddDir" src="../images/copilot-cli-add-directory.png" />
 <br />
-<img width="60%" height="60%" alt="CopilotCLITerminalBindings" src="https://github.com/user-attachments/assets/a55163ae-e4c4-4a17-88e0-def0dbf0246c" />
+<img width="60%" height="60%" alt="CopilotCLITerminalBindings" src="../images/copilot-cli-terminal-bindings.png" />
 
 
 2. Authorize with GitHub (if not already authenticated) in the Copilot CLI:
@@ -201,7 +201,7 @@ Issue templates help maintain consistency when team members create issues. This 
 > Respond **yes** to creating the issue and
 > **"Yes, and approve `gh issue` or `git config` for the rest of the running session"**.
 
-<img width="60%" height="60%" alt="CopilotCLIPerms" src="https://github.com/user-attachments/assets/9896ec70-4a71-41a9-b2c7-2b771ff15f46" />
+<img width="60%" height="60%" alt="CopilotCLIPerms" src="../images/copilot-cli-permissions.png" />
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
