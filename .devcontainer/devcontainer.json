@@ -41,13 +41,10 @@
         "workbench.layoutControl.enabled": false,
         "workbench.layoutControl.type": "hidden",
         "workbench.panel.opensMaximized": "always",
-        "workbench.startupEditor": "none",
         "workbench.tips.enabled": false,
         "window.openFilesInNewWindow": "off",
         "terminal.integrated.automationProfile.linux": null,
-        "workbench.action.terminal.focus": true,
-        "terminal.integrated.showOnStartup": "always",
-        "workbench.panel.opensMaximized": "always"
+        "terminal.integrated.showOnStartup": "always"
       }
     }
   },
