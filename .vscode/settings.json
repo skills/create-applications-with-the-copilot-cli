@@ -11,7 +11,7 @@
         "*": false
     },
     "github.copilot.editor.enableAutoCompletions": false,
-    "workbench.activityBar.location": "hidden",
+    "workbench.activityBar.location": "default",
     "workbench.explorer.enabled": false,
     "explorer.enabled": false,
     "explorer.autoReveal": false,
@@ -36,5 +36,6 @@
     "github.copilot.chat.editor.entryPoints": {
         "inlineChat": false
     },
-    "github.copilot.chat.keyboardShortcuts.enableCmd+I": false
+    "github.copilot.chat.keyboardShortcuts.enableCmd+I": false,
+    "sarif-viewer.connectToGithubCodeScanning": "off"
 }
