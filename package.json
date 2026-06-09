@@ -1,0 +1,24 @@
+{
+  "name": "create-applications-with-the-copilot-cli",
+  "version": "1.0.0",
+  "description": "_Learn to use GitHub Copilot CLI—a standalone terminal application—for issue management and building a Node.js calculator application._",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skills/create-applications-with-the-copilot-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/skills/create-applications-with-the-copilot-cli/issues"
+  },
+  "homepage": "https://github.com/skills/create-applications-with-the-copilot-cli#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
