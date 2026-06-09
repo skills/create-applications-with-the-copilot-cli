@@ -47,31 +47,36 @@ function parseOperand(value) {
   return num;
 }
 
-// CLI entry point
-const [, , operation, arg1, arg2] = process.argv;
+// Export functions for use in tests and other modules
+module.exports = { add, subtract, multiply, divide };
 
-const validOps = ["add", "subtract", "multiply", "divide"];
+// CLI entry point — only runs when executed directly
+if (require.main === module) {
+  const [, , operation, arg1, arg2] = process.argv;
 
-if (!operation || !validOps.includes(operation)) {
-  console.error(`Usage: node calculator.js <operation> <num1> <num2>`);
-  console.error(`Operations: ${validOps.join(", ")}`);
-  process.exit(1);
-}
+  const validOps = ["add", "subtract", "multiply", "divide"];
 
-if (arg1 === undefined || arg2 === undefined) {
-  console.error("Error: Two numeric operands are required.");
-  process.exit(1);
-}
+  if (!operation || !validOps.includes(operation)) {
+    console.error(`Usage: node calculator.js <operation> <num1> <num2>`);
+    console.error(`Operations: ${validOps.join(", ")}`);
+    process.exit(1);
+  }
 
-try {
-  const a = parseOperand(arg1);
-  const b = parseOperand(arg2);
+  if (arg1 === undefined || arg2 === undefined) {
+    console.error("Error: Two numeric operands are required.");
+    process.exit(1);
+  }
 
-  const operations = { add, subtract, multiply, divide };
-  const result = operations[operation](a, b);
+  try {
+    const a = parseOperand(arg1);
+    const b = parseOperand(arg2);
 
-  console.log(result);
-} catch (err) {
-  console.error(`Error: ${err.message}`);
-  process.exit(1);
+    const operations = { add, subtract, multiply, divide };
+    const result = operations[operation](a, b);
+
+    console.log(result);
+  } catch (err) {
+    console.error(`Error: ${err.message}`);
+    process.exit(1);
+  }
 }
