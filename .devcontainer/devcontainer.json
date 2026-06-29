@@ -16,7 +16,7 @@
       "settings": {
         "files.autoSave": "afterDelay",
         "workbench.statusBar.visible": false,
-        "workbench.sideBar.visible": false,
+        "workbench.sideBar.visible": true,
         "workbench.panel.defaultLocation": "bottom",
         "workbench.editor.showTabs": "none",
         "breadcrumbs.enabled": false,
@@ -27,9 +27,9 @@
           "*": false
         },
         "github.copilot.editor.enableAutoCompletions": false,
-        "workbench.activityBar.location": "hidden",
-        "workbench.activityBar.visible": false,
-        "workbench.explorer.enabled": false,
+        "workbench.activityBar.location": "default",
+        "workbench.activityBar.visible": true,
+        "workbench.explorer.enabled": true,
         "github.copilot-chat.enable": false,
         "chat.disableAIFeatures": true,
         "chat.editor.show": false,
